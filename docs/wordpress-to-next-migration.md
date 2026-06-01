@@ -404,28 +404,53 @@ Phase 3 implementation note:
 
 ### Phase 4: Move the reduced header
 
-- [ ] Extract the WordPress inline logo SVG to a reusable asset or component.
-- [ ] Build `Header.tsx` with logo, language switcher, and CTA only.
-- [ ] Make logo visible at mobile widths.
-- [ ] Build `LanguageSwitcher.tsx` as a small client component.
-- [ ] Render links to canonical locale paths.
+- [x] Extract the WordPress inline logo SVG to a reusable asset or component.
+- [x] Build `Header.tsx` with logo, language switcher, and CTA only.
+- [x] Make logo visible at mobile widths.
+- [x] Build `LanguageSwitcher.tsx` as a small client component.
+- [x] Render links to canonical locale paths.
 - [ ] Preserve approved query parameters during locale switches if required.
-- [ ] Add keyboard interaction, focus behavior, and `aria-expanded`.
-- [ ] Close the dropdown after navigation and on outside click or Escape.
-- [ ] Port only required header, dropdown, and button styles.
-- [ ] Verify header at mobile, tablet, and desktop widths.
+- [x] Add keyboard interaction, focus behavior, and `aria-expanded`.
+- [x] Close the dropdown after navigation and on outside click or Escape.
+- [x] Port only required header, dropdown, and button styles.
+- [x] Verify header at mobile, tablet, and desktop widths.
+
+Phase 4 implementation note:
+
+- The inline WordPress logo SVG is now a standalone reusable public asset.
+- `Header.tsx` remains a server component. Only the language dropdown ships as
+  a small client component.
+- Locale links use the canonical paths `/`, `/ua/`, and `/ru/`.
+- By request, `handleSubID()` behavior and `start` query propagation are
+  deferred. The CTA currently uses the direct localized dictionary URL.
+- Browser verification covered mobile, tablet, and desktop widths. The dropdown
+  was checked for focus transfer, `aria-expanded`, Escape handling, and outside
+  click handling.
 
 ### Phase 5: Move content shell and hero skeleton
 
-- [ ] Build `WhiteLabelHero.tsx`.
-- [ ] Add `<main>` and `<section>` semantic structure.
-- [ ] Copy the hero image and decorative background assets.
-- [ ] Port hero layout styles for mobile and desktop.
-- [ ] Decide which empty content elements remain while content is intentionally absent.
-- [ ] Keep one explicit H1 placeholder until final localized H1 copy is added.
-- [ ] Add meaningful image alt text.
-- [ ] Do not port excluded lower sections.
-- [ ] Verify visual layout and responsive breakpoints.
+- [x] Build `WhiteLabelHero.tsx`.
+- [x] Add `<main>` and `<section>` semantic structure.
+- [x] Copy the hero image and decorative background assets.
+- [x] Port hero layout styles for mobile and desktop.
+- [x] Decide which empty content elements remain while content is intentionally absent.
+- [x] Keep one explicit H1 placeholder until final localized H1 copy is added.
+- [x] Add meaningful image alt text.
+- [x] Do not port excluded lower sections.
+- [x] Verify visual layout and responsive breakpoints.
+
+Phase 5 implementation note:
+
+- `WhiteLabelHero.tsx` renders only the semantic hero shell, decorative layers,
+  one localized H1 placeholder, and the white-label wallet cards image.
+- By request, the intentionally empty skeleton does not render a subtitle,
+  feature list, or hero CTA.
+- The main `White-Label-hero.svg` asset was copied during this phase. The seven
+  decorative background SVG assets had already been copied with the scoped
+  styles in Phase 3.
+- Browser verification covered mobile, tablet, and desktop widths. The `/`,
+  `/ua/`, and `/ru/` pages each render one H1, a localized meaningful image
+  alt, and no excluded lower sections.
 
 ### Phase 6: Move footer-logo only
 

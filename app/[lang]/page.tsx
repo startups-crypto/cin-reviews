@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import { Header } from "@/components/header/Header";
+import { WhiteLabelHero } from "@/components/hero/WhiteLabelHero";
 import { isLocale, locales } from "@/lib/i18n";
 
 type LocalePageProps = Readonly<{
@@ -17,9 +20,17 @@ export default async function LocalePage({ params }: LocalePageProps) {
     notFound();
   }
 
+  const dictionary = await getDictionary(lang);
+
   return (
-    <main>
-      <h1>CinCin</h1>
-    </main>
+    <>
+      <Header dictionary={dictionary.header} locale={lang} />
+      <main className="white-label-page">
+        <WhiteLabelHero
+          imageAlt={dictionary.hero.imageAlt}
+          title={dictionary.hero.title}
+        />
+      </main>
+    </>
   );
 }

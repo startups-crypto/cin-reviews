@@ -303,6 +303,48 @@ h4,
   display: block;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 58px;
+  backdrop-filter: blur(20px);
+}
+
+.header .m-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header .logo {
+  width: 60px;
+  height: 36px;
+}
+
+.header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__right-part {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header .lang-menu {
+  margin-right: 5px;
+}
+
+.header .lang-menu__active {
+  padding-right: 4px;
+  padding-left: 8px;
+}
+
 .hero-wrapper {
   height: 120vh;
   overflow: hidden;
@@ -370,6 +412,48 @@ h4,
     no-repeat bottom center;
   background-size: contain;
   transform: translateX(-50%);
+}
+
+.white-label-page-hero {
+  height: auto;
+}
+
+.white-label-page-hero .hero {
+  position: relative;
+  z-index: 20;
+  padding: 110px var(--page-padding-mobile) 0;
+}
+
+.white-labels-cards {
+  display: block;
+  width: 90%;
+  max-width: 451px;
+  margin: 40px auto 0;
+}
+
+.white-labels-cards img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 400px) {
+  .white-label-page-hero .hero {
+    padding-right: var(--page-padding-wide-mobile);
+    padding-left: var(--page-padding-wide-mobile);
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .white-label-page-hero h1 {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 764px) {
+  .white-label-page-hero h1 {
+    max-width: 890px;
+  }
 }
 
 @media only screen and (min-width: 1080px) {
@@ -444,6 +528,24 @@ h4,
     min-width: 348px;
   }
 
+  .header {
+    height: 100px;
+  }
+
+  .header .logo {
+    width: 100px;
+    height: 60px;
+  }
+
+  .header .lang-menu {
+    margin-right: 20px;
+  }
+
+  .header .lang-menu__active {
+    padding-right: 10px;
+    padding-left: 20px;
+  }
+
   .hero-wrapper,
   .hero-decoration {
     height: 150vh;
@@ -453,6 +555,35 @@ h4,
   .hero-decoration-top-left,
   .hero-decoration-bottom-center {
     background-size: initial;
+  }
+
+  .white-label-page-hero {
+    height: auto;
+  }
+
+  .white-label-page-hero .hero {
+    padding-top: 160px;
+  }
+
+  .white-labels-cards {
+    margin-top: 45px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .white-label-page-hero .hero {
+    max-width: 1106px;
+    padding-top: 200px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .white-label-page-hero .hero {
+    padding-top: 225px;
   }
 }
 
