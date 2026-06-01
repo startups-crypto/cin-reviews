@@ -471,12 +471,21 @@ Phase 6 implementation note:
 
 ### Phase 7: Add only required JavaScript
 
-- [ ] Confirm the language switcher is the only interactive feature.
-- [ ] Do not add Swiper.
-- [ ] Do not add accordion logic.
-- [ ] Do not add firefly animation logic.
-- [ ] Do not add WordPress mobile-menu logic.
-- [ ] Check the client bundle for accidental heavy dependencies.
+- [x] Confirm the language switcher is the only interactive feature.
+- [x] Do not add Swiper.
+- [x] Do not add accordion logic.
+- [x] Do not add firefly animation logic.
+- [x] Do not add WordPress mobile-menu logic.
+- [x] Check the client bundle for accidental heavy dependencies.
+
+Phase 7 implementation note:
+
+- No WordPress JavaScript bundle was copied. `LanguageSwitcher.tsx` remains the
+  only client component and implements only the reduced dropdown behavior.
+- The production build completed successfully. Source and generated client
+  chunk searches found no Swiper, accordion, firefly-animation, WordPress
+  mobile-menu, jQuery, Slick, or GSAP code.
+- Runtime dependencies remain limited to Next.js, React, and React DOM.
 
 ### Phase 8: Add SEO support files and icons
 
