@@ -394,6 +394,8 @@ Phase 3 implementation note:
 
 - The Inter variable font replaces the four expected static Inter files. Its
   cmap was checked for Ukrainian and Russian sample text.
+- `Alkatra-Medium.ttf` is also self-hosted through `next/font/local` and exposed
+  as `--font-alkatra-medium` for future content that uses the decorative font.
 - The production build emits a self-hosted TTF preload and a generated
   `@font-face` with `font-display: swap`.
 - By request, the scoped CSS transfer also includes the primary CTA,

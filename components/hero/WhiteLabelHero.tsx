@@ -26,15 +26,6 @@ export function WhiteLabelHero({ imageAlt, title }: WhiteLabelHeroProps) {
 
       <section className="hero">
         <h1 className="t-center text-g-green">{title}</h1>
-        <picture className="white-labels-cards">
-          <Image
-            alt={imageAlt}
-            height="424"
-            priority
-            src="/images/White-Label-hero.svg"
-            width="453"
-          />
-        </picture>
       </section>
     </div>
   );
