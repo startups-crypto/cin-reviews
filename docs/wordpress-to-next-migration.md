@@ -454,11 +454,20 @@ Phase 5 implementation note:
 
 ### Phase 6: Move footer-logo only
 
-- [ ] Build `FooterLogo.tsx`.
-- [ ] Copy `CinCin.svg`.
-- [ ] Port only logo layout styles.
-- [ ] Add decorative footer wrappers only if confirmed.
-- [ ] Verify spacing after the hero-only page.
+- [x] Build `FooterLogo.tsx`.
+- [x] Copy `CinCin.svg`.
+- [x] Port only logo layout styles.
+- [x] Add decorative footer wrappers only if confirmed.
+- [x] Verify spacing after the hero-only page.
+
+Phase 6 implementation note:
+
+- `FooterLogo.tsx` renders the large logo as the footer's only content element.
+- By request, the three decorative footer wrappers and all six responsive
+  background SVG assets were retained.
+- Footer menus, copyright text, and social links remain excluded.
+- Browser verification covered mobile, tablet, and desktop widths after the
+  hero-only page.
 
 ### Phase 7: Add only required JavaScript
 
