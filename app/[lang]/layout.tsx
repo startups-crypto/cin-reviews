@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
+import { inter } from "@/app/fonts";
 import {
   getHtmlLang,
   getLanguageAlternates,
@@ -77,7 +78,7 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={getHtmlLang(lang)}>
+    <html className={inter.variable} lang={getHtmlLang(lang)}>
       <body>{children}</body>
     </html>
   );

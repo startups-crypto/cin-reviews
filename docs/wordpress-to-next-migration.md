@@ -382,13 +382,25 @@ Icon assets:
 
 ### Phase 3: Move fonts and global design tokens
 
-- [ ] Copy only required font files.
-- [ ] Configure fonts with `next/font/local`.
-- [ ] Replace Geist from the starter layout.
-- [ ] Port required color, spacing, breakpoint, reset, and typography rules.
-- [ ] Avoid copying the full compiled WordPress CSS bundle.
+- [x] Copy only required font files.
+- [x] Configure fonts with `next/font/local`.
+- [x] Replace Geist from the starter layout.
+- [x] Port required color, spacing, breakpoint, reset, and typography rules.
+- [x] Avoid copying the full compiled WordPress CSS bundle.
 - [ ] Verify Cyrillic rendering for `ua` and `ru`.
 - [ ] Compare font loading and layout shift in browser tools.
+
+Phase 3 implementation note:
+
+- The Inter variable font replaces the four expected static Inter files. Its
+  cmap was checked for Ukrainian and Russian sample text.
+- The production build emits a self-hosted TTF preload and a generated
+  `@font-face` with `font-display: swap`.
+- By request, the scoped CSS transfer also includes the primary CTA,
+  language-dropdown, and hero-background rules plus their required SVG assets.
+  These styles are intentionally available before the related components move.
+- Visual Cyrillic rendering and layout-shift comparison remain open until the
+  transferred header and hero markup can be inspected in browser tools.
 
 ### Phase 4: Move the reduced header
 
