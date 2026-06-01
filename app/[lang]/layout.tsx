@@ -58,11 +58,13 @@ export async function generateMetadata({
       ),
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,
+      images: [siteConfig.socialImageUrl],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,
+      images: [siteConfig.socialImageUrl],
     },
   };
 }

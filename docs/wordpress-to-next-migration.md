@@ -489,13 +489,29 @@ Phase 7 implementation note:
 
 ### Phase 8: Add SEO support files and icons
 
-- [ ] Move favicon assets or replace them with a cleaned minimal set.
-- [ ] Add valid manifest metadata only if a web manifest is needed.
-- [ ] Add `app/robots.ts`.
-- [ ] Add `app/sitemap.ts` with localized URLs and alternates.
-- [ ] Add static or generated OG image support.
-- [ ] Confirm no GTM code exists in generated HTML.
-- [ ] Confirm no Meta Pixel code exists in generated HTML.
+- [x] Move favicon assets or replace them with a cleaned minimal set.
+- [x] Add valid manifest metadata only if a web manifest is needed.
+- [x] Add `app/robots.ts`.
+- [x] Add `app/sitemap.ts` with localized URLs and alternates.
+- [x] Add static or generated OG image support.
+- [x] Confirm no GTM code exists in generated HTML.
+- [x] Confirm no Meta Pixel code exists in generated HTML.
+
+Phase 8 implementation note:
+
+- The cleaned icon set uses the WordPress favicon as `app/favicon.ico`, the
+  512px PNG as `app/icon.png`, and the 180px Apple touch icon as
+  `app/apple-icon.png`. Next.js generates the corresponding `<link>` tags.
+- The stale WordPress `manifest.json` was not copied. A web manifest is not
+  needed for the reduced landing page at this stage.
+- `app/robots.ts` allows crawling and references the generated sitemap.
+- `app/sitemap.ts` lists `/`, `/ua/`, and `/ru/` with absolute localized
+  alternates for `en`, `uk`, `ru`, and `x-default`.
+- By request, no OG image asset was added yet. Open Graph and Twitter metadata
+  use the temporary `siteConfig.socialImageUrl` URL, which can be replaced
+  directly or via `NEXT_PUBLIC_SOCIAL_IMAGE_URL` when the final asset exists.
+- The production build completed successfully. Generated locale HTML was
+  checked for GTM and Meta Pixel markers; none were found.
 
 ### Phase 9: Verification
 
