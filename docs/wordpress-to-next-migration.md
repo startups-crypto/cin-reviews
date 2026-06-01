@@ -168,9 +168,16 @@ Translation files exist for:
 - `pt`
 - `de`
 
-The active Polylang set must be verified before implementation. The local
-MariaDB server is now reported as running; query the enabled locale list during
-Phase 0 rather than assuming every translation file is active.
+The active Polylang set was verified from the local WordPress database during
+Phase 2. Enabled locales:
+
+- `en`
+- `ua`
+- `ru`
+
+Translation files for `es`, `pt`, and `de` exist in the theme but are not
+enabled in Polylang, so they are excluded from the Next.js dictionaries and
+locale routing.
 
 Important mapping:
 
@@ -339,8 +346,8 @@ Icon assets:
 
 - [ ] Confirm production hostname for canonical URLs.
 - [ ] Confirm deployment mode: Node/server deployment or static export.
-- [ ] Query the running local WordPress database when content extraction begins.
-- [ ] Confirm enabled Polylang locales; do not assume every translation file is active.
+- [x] Query the running local WordPress database when content extraction begins.
+- [x] Confirm enabled Polylang locales; do not assume every translation file is active.
 - [ ] Confirm whether localized public URLs must exactly match WordPress.
 - [ ] Confirm CTA label and URL source for each locale.
 - [ ] Confirm whether `start` query parameter propagation is still required.
@@ -363,15 +370,15 @@ Icon assets:
 
 ### Phase 2: Add dictionaries and localized metadata
 
-- [ ] Create a server-only dictionary loader.
-- [ ] Add dictionary files only for confirmed enabled locales.
-- [ ] Define hero placeholder keys, header CTA keys, and metadata keys.
-- [ ] Add localized title and description.
-- [ ] Add canonical URL generation that excludes query parameters.
-- [ ] Add `alternates.languages` hreflang links.
-- [ ] Add Open Graph and Twitter metadata.
-- [ ] Add `x-default` if agreed.
-- [ ] Inspect rendered `<head>` for every locale.
+- [x] Create a server-only dictionary loader.
+- [x] Add dictionary files only for confirmed enabled locales.
+- [x] Define hero placeholder keys, header CTA keys, and metadata keys.
+- [x] Add localized title and description.
+- [x] Add canonical URL generation that excludes query parameters.
+- [x] Add `alternates.languages` hreflang links.
+- [x] Add Open Graph and Twitter metadata.
+- [x] Add `x-default` if agreed.
+- [x] Inspect rendered `<head>` for every locale.
 
 ### Phase 3: Move fonts and global design tokens
 

@@ -1,4 +1,4 @@
-export const locales = ["en", "ua", "ru", "es", "pt", "de"] as const;
+export const locales = ["en", "ua", "ru"] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -8,9 +8,6 @@ const htmlLangByLocale: Record<Locale, string> = {
   en: "en",
   ua: "uk",
   ru: "ru",
-  es: "es",
-  pt: "pt",
-  de: "de",
 };
 
 export function isLocale(value: string): value is Locale {
@@ -23,4 +20,11 @@ export function getHtmlLang(locale: Locale): string {
 
 export function getLocalePath(locale: Locale): string {
   return locale === defaultLocale ? "/" : `/${locale}/`;
+}
+
+export function getLanguageAlternates(): Record<string, string> {
+  return Object.fromEntries([
+    ...locales.map((locale) => [getHtmlLang(locale), getLocalePath(locale)]),
+    ["x-default", getLocalePath(defaultLocale)],
+  ]);
 }
