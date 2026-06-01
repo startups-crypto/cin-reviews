@@ -515,16 +515,39 @@ Phase 8 implementation note:
 
 ### Phase 9: Verification
 
-- [ ] Run `npm run lint`.
-- [ ] Run `npm run build`.
-- [ ] Test all locale URLs.
-- [ ] Test unsupported locale handling.
-- [ ] Test language switching with and without approved query parameters.
-- [ ] Inspect generated HTML for semantic structure and one H1.
-- [ ] Inspect canonical, hreflang, robots, sitemap, OG, and Twitter output.
-- [ ] Check mobile and desktop screenshots.
-- [ ] Run Lighthouse or equivalent SEO and performance checks.
-- [ ] Check that only required assets and client JavaScript ship.
+- [x] Run `npm run lint`.
+- [x] Run `npm run build`.
+- [x] Test all locale URLs.
+- [x] Test unsupported locale handling.
+- [x] Test language switching with and without approved query parameters.
+- [x] Inspect generated HTML for semantic structure and one H1.
+- [x] Inspect canonical, hreflang, robots, sitemap, OG, and Twitter output.
+- [x] Check mobile and desktop screenshots.
+- [x] Run Lighthouse or equivalent SEO and performance checks.
+- [x] Check that only required assets and client JavaScript ship.
+
+Phase 9 implementation note:
+
+- Lint and the production build complete successfully. Production HTTP checks
+  return `200` for `/`, `/ua/`, `/ru/`, `robots.txt`, and `sitemap.xml`, and
+  return `404` for unsupported `/de/`.
+- Rendered HTML contains one H1 per locale, `en`, `uk`, and `ru` HTML language
+  values, canonical links, localized hreflang links with `x-default`, and Open
+  Graph and Twitter metadata. Absolute URLs still use the Phase 0 placeholder
+  hostname until the production hostname is confirmed.
+- Production browser checks covered desktop and an emulated `390x844` mobile
+  viewport. The reduced header and CTA fit without horizontal overflow.
+- The production language dropdown hydrates, opens by pointer interaction,
+  moves focus to its first link, closes on Escape with focus restoration, and
+  closes on outside click. No query parameter propagation is approved yet;
+  the deferred `start` parameter remains intentionally excluded.
+- Lighthouse is not installed locally. The available equivalent checks used
+  production CDP navigation and resource metrics plus crawler-oriented HTML
+  inspection. The production page loaded seven script resources totaling about
+  152 KB transferred and reported no browser runtime errors.
+- Production client chunks contain no markers for the excluded WordPress
+  JavaScript features or heavy libraries. The five unused `create-next-app`
+  public SVG assets were removed.
 
 ## Suggested Chat Slices
 
