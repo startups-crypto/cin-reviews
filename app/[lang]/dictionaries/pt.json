@@ -2,17 +2,17 @@
   "metadata": {
     "title": "Avaliações da CinCin — Opiniões e classificações reais de usuários",
     "description": "Está pensando em usar a CinCin? Veja avaliações verificadas de clientes sobre emissão de cartões, taxas, recarga com criptomoedas e pagamentos globais. Experiências reais, sem filtros.",
-    "openGraphLocale": "en_GB"
+    "openGraphLocale": "pt_PT"
   },
   "header": {
     "cta": {
-      "label": "Get Started",
+      "label": "Começar",
       "url": "https://aff.cincin.exchange/s/p4GNQ"
     }
   },
   "hero": {
-    "title": "Virtual cards\n",
-    "titlePart2": "you can trust",
+    "title": "Cartões virtuais\n",
+    "titlePart2": "em que você pode confiar",
     "description": "",
     "imageAlt": "CinCin white-label wallet cards",
     "features": []
