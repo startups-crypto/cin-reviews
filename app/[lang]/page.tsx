@@ -28,8 +28,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <Header dictionary={dictionary.header} locale={lang} />
       <main className="white-label-page">
         <WhiteLabelHero
-          imageAlt={dictionary.hero.imageAlt}
-          title={dictionary.hero.title}
+          heroDictionary={dictionary.hero}
         />
       </main>
       <FooterLogo />

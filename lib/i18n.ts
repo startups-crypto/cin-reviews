@@ -1,4 +1,4 @@
-export const locales = ["en", "ua", "ru"] as const;
+export const locales = ["en", "ua", "ru", "es", "pt"] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -8,6 +8,8 @@ const htmlLangByLocale: Record<Locale, string> = {
   en: "en",
   ua: "uk",
   ru: "ru",
+  es: "es",
+  pt: "pt"
 };
 
 export function isLocale(value: string): value is Locale {

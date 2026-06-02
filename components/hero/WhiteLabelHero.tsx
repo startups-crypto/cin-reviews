@@ -1,8 +1,7 @@
-import Image from "next/image";
+import type { Dictionary } from "@/app/[lang]/dictionaries";
 
 type WhiteLabelHeroProps = Readonly<{
-  imageAlt: string;
-  title: string;
+  heroDictionary: Dictionary["hero"];
 }>;
 
 const decorations = [
@@ -13,7 +12,7 @@ const decorations = [
   "hero-decoration-bottom-center",
 ] as const;
 
-export function WhiteLabelHero({ imageAlt, title }: WhiteLabelHeroProps) {
+export function WhiteLabelHero({ heroDictionary }: WhiteLabelHeroProps) {
   return (
     <div className="hero-wrapper white-label-page-hero">
       {decorations.map((className) => (
@@ -25,7 +24,10 @@ export function WhiteLabelHero({ imageAlt, title }: WhiteLabelHeroProps) {
       ))}
 
       <section className="hero">
-        <h1 className="t-center text-g-green">{title}</h1>
+        <h1 className="t-center text-g-green">
+          <span className="font-alkatra-medium">{heroDictionary.title}</span>
+          {heroDictionary.titlePart2}
+        </h1>
       </section>
     </div>
   );

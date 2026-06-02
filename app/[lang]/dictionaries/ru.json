@@ -11,7 +11,8 @@
     }
   },
   "hero": {
-    "title": "CinCin",
+    "title": "Virtual cards\n",
+    "titlePart2": "you can trust",
     "description": "",
     "imageAlt": "Карты white-label кошелька CinCin",
     "features": []
