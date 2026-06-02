@@ -471,6 +471,10 @@ h4,
   text-align: center;
 }
 
+.cin-reviews blockquote {
+  margin: 0;
+}
+
 .cin-reviews li {
   margin-top: 0;
   max-height: 0;
@@ -486,10 +490,13 @@ h4,
   opacity: 1;
 }
 
-.cin-reviews li h4 {
+.cin-reviews li p {
   margin: 32px 0 0 0;
   font-size: 16px;
+  font-weight: 700;
   line-height: 24px;
+  color: var(--color-heading);
+  
 }
 
 .review-button {
@@ -668,7 +675,7 @@ h4,
     line-height: 28px;
   }
   
-  .cin-reviews li h4 {
+  .cin-reviews li p {
     margin-top: 64px;
     font-size: 18px;
     line-height: 28px;

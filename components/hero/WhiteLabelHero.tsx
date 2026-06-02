@@ -1,11 +1,10 @@
-"use client";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
-import clsx from "clsx";
-import { useState } from "react";
+import { ReviewsList } from "@/components/hero/ReviewsList";
 
 type WhiteLabelHeroProps = Readonly<{
   heroDictionary: Dictionary["hero"];
   reviews: Dictionary["reviews"];
+  reviewsCTA: Dictionary["reviewsCTA"];
 }>;
 
 const decorations = [
@@ -16,11 +15,7 @@ const decorations = [
   "hero-decoration-bottom-center",
 ] as const;
 
-const step = 10;
-
-export function WhiteLabelHero({ heroDictionary, reviews }: WhiteLabelHeroProps) {
-  const [visible, setVisible] = useState(10);
-
+export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLabelHeroProps) {
   return (
     <div className="hero-wrapper white-label-page-hero">
       {decorations.map((className) => (
@@ -36,14 +31,7 @@ export function WhiteLabelHero({ heroDictionary, reviews }: WhiteLabelHeroProps)
           <span className="font-alkatra-medium">{heroDictionary.title}</span>
           {heroDictionary.titlePart2}
         </h1>
-        <ul className="cin-reviews">
-          {reviews.map((review, index) => {
-            return <li key={index} className={index < visible ? "active" : ""}><h4>{review}</h4></li>;
-          })}
-        </ul>
-        <div className="review-button">
-          <button className={clsx("s-button","s-button--small", visible >= reviews.length ? "hide" : "")} onClick={() => setVisible(visible + step)}>Load more</button>
-        </div>
+        <ReviewsList reviews={reviews} loadMoreText={reviewsCTA} />
       </section>
     </div>
   );

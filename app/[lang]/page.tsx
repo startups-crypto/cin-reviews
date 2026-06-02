@@ -30,6 +30,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         <WhiteLabelHero
           heroDictionary={dictionary.hero}
           reviews={dictionary.reviews}
+          reviewsCTA={dictionary.reviewsCTA}
         />
       </main>
       <FooterLogo />
