@@ -11,16 +11,34 @@ type ReviewsListProps = Readonly<{
 
 const initialVisibleReviews = 10;
 const step = 10;
+const staggerDelay = 100;
 
-export function ReviewsList({ reviews,loadMoreText }: ReviewsListProps) {
+export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
   const [visible, setVisible] = useState(initialVisibleReviews);
+  const [revealStart, setRevealStart] = useState<number | null>(null);
   const allReviewsVisible = visible >= reviews.length;
+
+  function handleLoadMore() {
+    setRevealStart(visible);
+    setVisible((currentVisible) =>
+      Math.min(currentVisible + step, reviews.length),
+    );
+  }
 
   return (
     <>
       <ul aria-live="polite" className="cin-reviews" id="cin-reviews">
         {reviews.map((review, index) => (
-          <li className={index < visible ? "active" : ""} key={index}>
+          <li
+            className={index < visible ? "active" : ""}
+            key={index}
+            style={{
+              transitionDelay:
+                revealStart !== null && index >= revealStart
+                  ? `${(index - revealStart) * staggerDelay}ms`
+                  : undefined,
+            }}
+          >
             <blockquote>
               <p>{review}</p>
             </blockquote>
@@ -36,7 +54,7 @@ export function ReviewsList({ reviews,loadMoreText }: ReviewsListProps) {
             "s-button--small",
             allReviewsVisible && "hide",
           )}
-          onClick={() => setVisible((currentVisible) => currentVisible + step)}
+          onClick={handleLoadMore}
           type="button"
         >
           {loadMoreText}
