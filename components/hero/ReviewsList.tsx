@@ -18,6 +18,7 @@ export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
   const [revealStart, setRevealStart] = useState<number | null>(null);
   const allReviewsVisible = visible >= reviews.length;
 
+
   function handleLoadMore() {
     setRevealStart(visible);
     setVisible((currentVisible) =>
