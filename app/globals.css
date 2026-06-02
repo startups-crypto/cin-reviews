@@ -465,6 +465,24 @@ h4,
   margin-left: auto;
 }
 
+.cin-reviews {
+  margin: 44px auto 0 auto;
+  max-width: 478px;
+  text-align: center;
+}
+
+.cin-reviews li {
+  margin-top: 32px;
+}
+
+.cin-reviews li:first-child {
+    margin: 0;
+}
+
+.cin-reviews li p {
+  margin: 0;
+}
+
 @media only screen and (min-width: 400px) {
   .white-label-page-hero .hero {
     padding-right: var(--page-padding-wide-mobile);
@@ -617,6 +635,20 @@ h4,
     padding-right: 0;
     padding-left: 0;
   }
+
+  .cin-reviews {
+    margin-top: 64px;
+  }
+
+  .cin-reviews li {
+    margin-top: 64px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cin-reviews li:first-child {
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -662,5 +694,9 @@ h4,
     margin-bottom: 32px;
     font-size: 28px;
     line-height: 40px;
+  }
+
+  .cin-reviews {
+    margin-top: 86px;
   }
 }
