@@ -25,7 +25,6 @@ export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLab
           key={className}
         />
       ))}
-
       <section className="hero">
         <h1 className="t-center text-g-green">
           <span className="font-alkatra-medium">{heroDictionary.title}</span>
