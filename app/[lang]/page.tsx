@@ -29,6 +29,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <main className="white-label-page">
         <WhiteLabelHero
           heroDictionary={dictionary.hero}
+          reviews={dictionary.reviews}
         />
       </main>
       <FooterLogo />

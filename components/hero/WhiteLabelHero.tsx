@@ -1,7 +1,11 @@
+"use client";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import clsx from "clsx";
+import { useState } from "react";
 
 type WhiteLabelHeroProps = Readonly<{
   heroDictionary: Dictionary["hero"];
+  reviews: Dictionary["reviews"];
 }>;
 
 const decorations = [
@@ -12,7 +16,11 @@ const decorations = [
   "hero-decoration-bottom-center",
 ] as const;
 
-export function WhiteLabelHero({ heroDictionary }: WhiteLabelHeroProps) {
+const step = 10;
+
+export function WhiteLabelHero({ heroDictionary, reviews }: WhiteLabelHeroProps) {
+  const [visible, setVisible] = useState(10);
+
   return (
     <div className="hero-wrapper white-label-page-hero">
       {decorations.map((className) => (
@@ -29,31 +37,13 @@ export function WhiteLabelHero({ heroDictionary }: WhiteLabelHeroProps) {
           {heroDictionary.titlePart2}
         </h1>
         <ul className="cin-reviews">
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
-          <li>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-          </li>
+          {reviews.map((review, index) => {
+            return <li key={index} className={index < visible ? "active" : ""}><h4>{review}</h4></li>;
+          })}
         </ul>
+        <div className="review-button">
+          <button className={clsx("s-button","s-button--small", visible >= reviews.length ? "hide" : "")} onClick={() => setVisible(visible + step)}>Load more</button>
+        </div>
       </section>
     </div>
   );
