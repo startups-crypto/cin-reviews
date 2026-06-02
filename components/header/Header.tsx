@@ -35,7 +35,11 @@ export function Header({ dictionary, locale }: HeaderProps) {
             currentLocale={locale}
             options={languageOptions}
           />
-          <a className="s-button s-button--small" href={dictionary.cta.url}>
+          <a
+            className="s-button s-button--small"
+            href={dictionary.cta.url}
+            rel="sponsored"
+          >
             {dictionary.cta.label}
           </a>
         </div>

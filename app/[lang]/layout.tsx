@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { alkatraMedium, inter } from "@/app/fonts";
+import { StructuredData } from "@/components/seo/StructuredData";
 import {
   getHtmlLang,
   getLanguageAlternates,
@@ -58,13 +59,13 @@ export async function generateMetadata({
       ),
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,
-      images: [siteConfig.socialImageUrl],
+      images: [siteConfig.socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,
-      images: [siteConfig.socialImageUrl],
+      images: [siteConfig.socialImage],
     },
   };
 }
@@ -84,7 +85,10 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${alkatraMedium.variable}`}
       lang={getHtmlLang(lang)}
     >
-      <body>{children}</body>
+      <body>
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }
