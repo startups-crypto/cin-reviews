@@ -12,7 +12,7 @@ export function DeferredAlkatraText({ children }: DeferredAlkatraTextProps) {
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       textRef.current?.classList.add("font-alkatra-medium");
-    }, 3500);
+    }, 1200);
 
     return () => {
       window.clearTimeout(timeoutId);
