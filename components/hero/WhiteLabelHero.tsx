@@ -27,7 +27,7 @@ export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLab
       ))}
       <section className="hero">
         <h1 className="t-center text-g-green">
-          <span className="font-alkatra-medium">{heroDictionary.title}</span>
+          <span>{heroDictionary.title}</span>
           {heroDictionary.titlePart2}
         </h1>
         <ReviewsList reviews={reviews} loadMoreText={reviewsCTA} />
