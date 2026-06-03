@@ -10,12 +10,12 @@ export function DeferredAlkatraText({ children }: DeferredAlkatraTextProps) {
   const textRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const animationFrameId = window.requestAnimationFrame(() => {
+    const timeoutId = window.setTimeout(() => {
       textRef.current?.classList.add("font-alkatra-medium");
-    });
+    }, 3500);
 
     return () => {
-      window.cancelAnimationFrame(animationFrameId);
+      window.clearTimeout(timeoutId);
     };
   }, []);
 
