@@ -12,6 +12,7 @@ import {
   locales,
 } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
+import ReactDOM from "react-dom";
 
 import "../globals.css";
 
@@ -22,6 +23,20 @@ type LocaleLayoutProps = Readonly<{
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
+}
+
+function PreloadResources() {
+  ReactDOM.preload("/images/template-bgs/hero-left-top-bg-2.svg", {
+    as: "image",
+    fetchPriority: "high",
+  });
+
+  ReactDOM.preload("/images/template-bgs/hero-top-center-bg.svg", {
+    as: "image",
+    fetchPriority: "high",
+  });
+
+  return null;
 }
 
 export async function generateMetadata({
@@ -86,6 +101,7 @@ export default async function LocaleLayout({
       lang={getHtmlLang(lang)}
     >
       <body>
+        <PreloadResources />
         <StructuredData />
         {children}
       </body>
