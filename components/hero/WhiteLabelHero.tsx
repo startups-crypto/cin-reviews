@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { ReviewsList } from "@/components/hero/ReviewsList";
+import { DeferredAlkatraText } from "../deferredAlkatraText/DeferredAlkatraText";
 
 type WhiteLabelHeroProps = Readonly<{
   heroDictionary: Dictionary["hero"];
@@ -27,7 +28,7 @@ export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLab
       ))}
       <section className="hero">
         <h1 className="t-center text-g-green">
-          <span>{heroDictionary.title}</span>
+          <DeferredAlkatraText>{heroDictionary.title}</DeferredAlkatraText>
           {heroDictionary.titlePart2}
         </h1>
         <ReviewsList reviews={reviews} loadMoreText={reviewsCTA} />
