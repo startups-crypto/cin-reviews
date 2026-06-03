@@ -9,7 +9,7 @@ export const inter = localFont({
 
 export const alkatraMedium = localFont({
   src: "./fonts/Alkatra-Medium.woff2",
-  display: "swap",
+  display: "optional",
   preload: false,
   variable: "--font-alkatra-medium",
   weight: "500",

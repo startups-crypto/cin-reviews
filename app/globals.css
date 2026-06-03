@@ -114,6 +114,11 @@ h1,
   margin-bottom: 24px;
   font-size: 36px;
   line-height: 90%;
+  transition: font-family 0.2s ease;
+}
+
+h1 span {
+  transition: font-family 0.2s ease;
 }
 
 h2,
