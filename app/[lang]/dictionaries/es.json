@@ -60,68 +60,28 @@
     },
     {
       "review": "Pagué mi suscripción online muy fácilmente, buena solución y soporte amable.",
-      "author": "Lukas Weber",
-      "date": "2025-06-14"
-    },
-    {
-      "review": "Luego pedí mi café y funcionó. Estoy muy satisfecho con su servicio y por fin feliz de haber encontrado lo que estaba buscando.",
-      "author": "James P.",
-      "date": "2025-08-21"
-    },
-    {
-      "review": "Son los primeros que encontré donde la tarjeta virtual funciona muy bien.",
-      "author": "Ahmed K.",
-      "date": "2025-08-24"
-    },
-    {
-      "review": "Leyenda.",
-      "author": "Carla",
-      "date": "2025-10-22"
-    },
-    {
-      "review": "Gracias por la respuesta rápida y la ayuda.",
-      "author": "Nora",
-      "date": "2025-10-24"
-    },
-    {
-      "review": "Muchas gracias por todo; si tengo algún problema, se lo haré saber.",
-      "author": "David Nguyen",
-      "date": "2025-10-27"
-    },
-    {
-      "review": "Ah, wow, 30 días. Entendido. ¡Gracias por la respuesta!",
-      "author": "Priya",
-      "date": "2025-12-01"
-    },
-    {
-      "review": "Muchas gracias por el soporte, son los mejores 👍",
-      "author": "Amir",
-      "date": "2026-01-01"
-    },
-    {
-      "review": "Gracias por la asistencia.",
-      "author": "Daniel R.",
-      "date": "2026-01-11"
-    },
-    {
-      "review": "Aprecio su amabilidad y apoyo.",
-      "author": "Chloe",
-      "date": "2026-01-11"
-    },
-    {
-      "review": "¡Muchas gracias! El mejor servicio al cliente ❤️",
-      "author": "Sophie M.",
-      "date": "2026-03-24"
+      "author": "Olivia",
+      "date": "2025-06-25"
     },
     {
       "review": "Ok, lo veo todo. Gracias. En general, muchas gracias por sus respuestas rápidas. Trabajo en IT y sé lo importante que es la atención al cliente.",
-      "author": "Lucia Fernandez",
+      "author": "Darya K.",
       "date": "2025-06-27"
     },
     {
-      "review": "Gracias por su trabajo🙏🏼 vaya, resulta que todo es muy sencillo, gracias💚",
+      "review": "Gracias por su trabajo",
       "author": "@olya_v",
       "date": "2025-06-29"
+    },
+    {
+      "review": "🙏🏼",
+      "author": "vlad_777",
+      "date": "2025-07-02"
+    },
+    {
+      "review": "vaya, resulta que todo es muy sencillo, gracias💚",
+      "author": "denis_88",
+      "date": "2025-07-03"
     },
     {
       "review": "Allí es más sencillo.",
@@ -130,23 +90,43 @@
     },
     {
       "review": "Francia está en la Edad de Piedra.",
-      "author": "Mateo Garcia",
+      "author": "Natalya",
       "date": "2025-07-09"
     },
     {
-      "review": "Aquí la gente no puede transferir 1000€ sin campos y bloqueos. Por eso me gusta mucho cómo funciona su servicio. Evita muchísimos problemas. ¡Gracias otra vez!",
+      "review": "Aquí la gente no puede transferir 1000€ sin campos extra y bloqueos",
       "author": "@maxim_k",
       "date": "2025-07-11"
     },
     {
+      "review": "Por eso me gusta mucho cómo funciona su servicio",
+      "author": "Vladislav",
+      "date": "2025-07-12"
+    },
+    {
+      "review": "Evita muchísimos problemas",
+      "author": "Sergey",
+      "date": "2025-07-15"
+    },
+    {
+      "review": "¡Gracias otra vez!",
+      "author": "@vika_l",
+      "date": "2025-07-18"
+    },
+    {
       "review": "Sí, sí, todo perfecto ) gracias 🙏 qué agradable.",
-      "author": "Sofia Martinez",
+      "author": "Stanislav",
       "date": "2025-07-18"
     },
     {
       "review": "¡Gracias por la ayuda! ¡Todo salió bien!",
-      "author": "Diego Lopez",
+      "author": "Yuliya",
       "date": "2025-07-22"
+    },
+    {
+      "review": "Gracias por el excelente soporte.",
+      "author": "Oscar",
+      "date": "2025-07-24"
     },
     {
       "review": "Tienen el soporte más genial que he visto. ¡Que tengan un excelente día!",
@@ -189,6 +169,11 @@
       "date": "2025-08-11"
     },
     {
+      "review": "Muchas gracias por la calma y el apoyo ❤️😉",
+      "author": "Marcus T.",
+      "date": "2025-08-13"
+    },
+    {
       "review": "Gracias, las tarjetas se vincularon en todas partes.",
       "author": "@misha_t",
       "date": "2025-08-15"
@@ -204,13 +189,23 @@
       "date": "2025-08-20"
     },
     {
+      "review": "Luego pedí mi café y funcionó. Estoy muy satisfecho con su servicio y por fin feliz de haber encontrado lo que estaba buscando.",
+      "author": "James P.",
+      "date": "2025-08-21"
+    },
+    {
+      "review": "Son los primeros que encontré donde la tarjeta virtual funciona muy bien.",
+      "author": "Ahmed K.",
+      "date": "2025-08-24"
+    },
+    {
       "review": "Muchísimas gracias por la respuesta rápida.",
-      "author": "Valentina Ruiz",
+      "author": "Ivan P.",
       "date": "2025-08-26"
     },
     {
       "review": "Gracias. Que tengan una buena noche y gracias por el servicio)",
-      "author": "Carlos Mendoza",
+      "author": "Maksim",
       "date": "2025-08-28"
     },
     {
@@ -220,17 +215,17 @@
     },
     {
       "review": "La tarjeta es genial, todo funciona",
-      "author": "Camila Torres",
+      "author": "Kseniya",
       "date": "2025-09-01"
     },
     {
       "review": "Sí, son geniales",
-      "author": "Javier Moreno",
+      "author": "Nikita",
       "date": "2025-09-04"
     },
     {
       "review": "Esto es genial",
-      "author": "Isabella Romero",
+      "author": "Andrey K.",
       "date": "2025-09-05"
     },
     {
@@ -240,7 +235,7 @@
     },
     {
       "review": "Wow",
-      "author": "Andres Castillo",
+      "author": "Alina S.",
       "date": "2025-09-09"
     },
     {
@@ -250,12 +245,12 @@
     },
     {
       "review": "Tarjeta genial, la uso en Turquía en todas partes con Apple Pay",
-      "author": "Mariana Vega",
+      "author": "Svetlana",
       "date": "2025-09-14"
     },
     {
       "review": "Gracias, velocidad 🔥",
-      "author": "Nicolas Herrera",
+      "author": "Marina",
       "date": "2025-09-16"
     },
     {
@@ -280,12 +275,12 @@
     },
     {
       "review": "Sí, gracias. El mejor soporte. 🤝",
-      "author": "Paula Navarro",
+      "author": "Dmitriy",
       "date": "2025-09-27"
     },
     {
       "review": "Responden tan rápido 😳",
-      "author": "Miguel Santos",
+      "author": "Polina",
       "date": "2025-09-29"
     },
     {
@@ -300,7 +295,7 @@
     },
     {
       "review": "¡Muchísimas gracias!",
-      "author": "Elena Cruz",
+      "author": "Veronika",
       "date": "2025-10-06"
     },
     {
@@ -310,12 +305,12 @@
     },
     {
       "review": "La tarjeta funciona, gracias otra vez",
-      "author": "Alejandro Rojas",
+      "author": "Aleksey",
       "date": "2025-10-11"
     },
     {
-      "review": "Salió bien 👍",
-      "author": "Claudia Morales",
+      "review": "Funcionó",
+      "author": "Artyom",
       "date": "2025-10-12"
     },
     {
@@ -324,7 +319,7 @@
       "date": "2025-10-15"
     },
     {
-      "review": "Gracias, pude pagar, el servicio es top",
+      "review": "gracias, pude pagar, el servicio es top",
       "author": "@oleg_t",
       "date": "2025-10-18"
     },
@@ -334,8 +329,23 @@
       "date": "2025-10-20"
     },
     {
+      "review": "Leyenda.",
+      "author": "Carla",
+      "date": "2025-10-22"
+    },
+    {
+      "review": "Gracias por la respuesta rápida y la ayuda.",
+      "author": "Nora",
+      "date": "2025-10-24"
+    },
+    {
+      "review": "Muchas gracias por todo; si tengo algún problema, se lo haré saber.",
+      "author": "David Nguyen",
+      "date": "2025-10-27"
+    },
+    {
       "review": "Gracias por el trabajo rápido ) y por el gran soporte!",
-      "author": "Daniel Ortega",
+      "author": "Ilya V.",
       "date": "2025-10-29"
     },
     {
@@ -350,12 +360,12 @@
     },
     {
       "review": "Funcionó. Son los mejores, gracias por la respuesta rápida",
-      "author": "Laura Medina",
+      "author": "Egor",
       "date": "2025-11-03"
     },
     {
       "review": "Merci, son muy amables",
-      "author": "Pablo Serrano",
+      "author": "Anton",
       "date": "2025-11-05"
     },
     {
@@ -364,9 +374,14 @@
       "date": "2025-11-07"
     },
     {
-      "review": "¡Gracias por la paciencia y la comprensión! Son súper los mejores. ¡Gracias!",
-      "author": "Lucia Fernandez",
+      "review": "¡Gracias por la paciencia y la comprensión! Son geniales",
+      "author": "Olga",
       "date": "2025-11-11"
+    },
+    {
+      "review": "¡Los mejores! Gracias",
+      "author": "Gleb",
+      "date": "2025-11-13"
     },
     {
       "review": "Son los mejores ♥️",
@@ -385,7 +400,7 @@
     },
     {
       "review": "Para su información: pagué iHerb en Tailandia.",
-      "author": "Mateo Garcia",
+      "author": "Anna",
       "date": "2025-11-22"
     },
     {
@@ -399,14 +414,39 @@
       "date": "2025-11-25"
     },
     {
+      "review": "Ah, wow, 30 días.",
+      "author": "Lena",
+      "date": "2025-11-27"
+    },
+    {
+      "review": "Entendido.",
+      "author": "Maya Patel",
+      "date": "2025-11-30"
+    },
+    {
+      "review": "¡Gracias por la respuesta!",
+      "author": "Priya",
+      "date": "2025-12-01"
+    },
+    {
       "review": "¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡gracias!!!!!!!!!!!!!!!!!!!!!!!!!",
-      "author": "Sofia Martinez",
+      "author": "Pavel G.",
       "date": "2025-12-04"
+    },
+    {
+      "review": "😍😍😍😍",
+      "author": "@grisha",
+      "date": "2025-12-07"
     },
     {
       "review": "😍😍😍😍 esto sí que es servicio 😊😊😊❤️❤️❤️",
       "author": "@timka",
       "date": "2025-12-08"
+    },
+    {
+      "review": "😊😊😊❤️❤️❤️",
+      "author": "liza_m",
+      "date": "2025-12-10"
     },
     {
       "review": "Entendido. Gracias.",
@@ -415,7 +455,7 @@
     },
     {
       "review": "No son inventados. Tienen un gran producto. Estoy seguro de que crecerán. ¡Me alegraría participar seriamente con ustedes!",
-      "author": "Diego Lopez",
+      "author": "Kristina",
       "date": "2025-12-15"
     },
     {
@@ -429,6 +469,11 @@
       "date": "2025-12-18"
     },
     {
+      "review": "no, todo estuvo bien, buen producto. simplemente me muevo a una zona muy blanca para dormir tranquilo)",
+      "author": "Bogdan",
+      "date": "2025-12-21"
+    },
+    {
       "review": "fantástico, ¡muchas gracias!",
       "author": "@masha_p",
       "date": "2025-12-24"
@@ -440,13 +485,23 @@
     },
     {
       "review": "Entendido, muchas gracias ❣️",
-      "author": "Valentina Ruiz",
+      "author": "Mariya",
       "date": "2025-12-28"
     },
     {
-      "review": "Muchas gracias por su proyecto",
-      "author": "Carlos Mendoza",
+      "review": "muchas gracias por su proyecto",
+      "author": "Roman",
       "date": "2025-12-29"
+    },
+    {
+      "review": "muchas gracias por el soporte",
+      "author": "Amir",
+      "date": "2026-01-01"
+    },
+    {
+      "review": "son los mejores 👍",
+      "author": "Ben",
+      "date": "2026-01-05"
     },
     {
       "review": "Dios mío, parece que funcionó",
@@ -455,8 +510,18 @@
     },
     {
       "review": "Muchísimas gracias",
-      "author": "Camila Torres",
+      "author": "Timur",
       "date": "2026-01-09"
+    },
+    {
+      "review": "Gracias por la asistencia.",
+      "author": "Daniel R.",
+      "date": "2026-01-11"
+    },
+    {
+      "review": "Aprecio su amabilidad y apoyo.",
+      "author": "Chloe",
+      "date": "2026-01-11"
     },
     {
       "review": "Ah, entendí, gracias 🙏",
@@ -465,7 +530,7 @@
     },
     {
       "review": "Sí, funcionó, gracias!",
-      "author": "Javier Moreno",
+      "author": "Viktoriya",
       "date": "2026-01-17"
     },
     {
@@ -475,7 +540,7 @@
     },
     {
       "review": "Entendido, muchas gracias por la información",
-      "author": "Isabella Romero",
+      "author": "Tatyana",
       "date": "2026-01-21"
     },
     {
@@ -484,19 +549,24 @@
       "date": "2026-01-24"
     },
     {
-      "review": "Todo excelente, gracias otra vez, perdón por molestar! gracias por la ayuda",
-      "author": "Andres Castillo",
+      "review": "Todo excelente, gracias otra vez, disculpen la molestia.",
+      "author": "Ekaterina",
       "date": "2026-01-25"
     },
     {
+      "review": "gracias por la ayuda",
+      "author": "sasha_dev",
+      "date": "2026-01-28"
+    },
+    {
       "review": "ya hice todo, gracias",
-      "author": "Mariana Vega",
+      "author": "Denis K.",
       "date": "2026-01-30"
     },
     {
       "review": "Funcionó",
-      "author": "Nicolas Herrera",
-      "date": "2025-10-12"
+      "author": "kris.p",
+      "date": "2026-02-02"
     },
     {
       "review": "Gracias, ayudó",
@@ -510,12 +580,12 @@
     },
     {
       "review": "Que tengan una excelente semana por delante",
-      "author": "Paula Navarro",
+      "author": "Svetlana",
       "date": "2026-02-08"
     },
     {
       "review": "Los mejores",
-      "author": "Miguel Santos",
+      "author": "Vladislav",
       "date": "2026-02-09"
     },
     {
@@ -525,7 +595,7 @@
     },
     {
       "review": "Genial, gracias!",
-      "author": "Elena Cruz",
+      "author": "Ivan P.",
       "date": "2026-02-15"
     },
     {
@@ -535,7 +605,7 @@
     },
     {
       "review": "Entendido, gracias por la rapidez",
-      "author": "Alejandro Rojas",
+      "author": "Mariya",
       "date": "2026-02-19"
     },
     {
@@ -545,7 +615,7 @@
     },
     {
       "review": "entendido, gracias, buenas condiciones",
-      "author": "Claudia Morales",
+      "author": "Darya K.",
       "date": "2026-02-22"
     },
     {
@@ -560,18 +630,28 @@
     },
     {
       "review": "Que prosperen)",
-      "author": "Daniel Ortega",
+      "author": "Anna",
       "date": "2026-03-02"
     },
     {
       "review": "Bien, gracias! Todo funciona🤌🏼 lo recomendaré a mis amigos",
-      "author": "Laura Medina",
+      "author": "Olga",
       "date": "2026-03-04"
     },
     {
-      "review": "Compartiré mi experiencia, quizá ayude a alguno de sus clientes más adelante =). La tarjeta se vinculó casi al instante, la transacción en PayPal aparece como exitosa, solo que en su app/bot por ahora no hay notificación del cargo. Si finalmente se procesa el cargo, pueden decir con más confianza que sus tarjetas funcionan con PayPal; creo que para muchos será una gran ventaja. En cualquier caso, completaré la historia cuando quede claro. De todos modos, muchísimas gracias por el servicio. Ya casi me había desesperado después de que e.pn dejó de funcionar con PayPal; no sabía qué hacer hasta que los encontré =)",
+      "review": "Compartiré mi experiencia, quizá ayude a alguno de sus clientes más adelante =)",
       "author": "@vika_l",
       "date": "2026-03-05"
+    },
+    {
+      "review": "La tarjeta se vinculó casi al instante, la transacción en PayPal aparece como exitosa, solo que en su app/bot por ahora no hay notificación del cargo. Si finalmente se procesa el cargo, pueden decir con más confianza que sus tarjetas funcionan con PayPal; creo que para muchos será una gran ventaja.",
+      "author": "zheka_k",
+      "date": "2026-03-08"
+    },
+    {
+      "review": "En cualquier caso, completaré la historia cuando quede claro. De todos modos, muchísimas gracias por el servicio. Ya casi me había desesperado después de que e.pn dejó de funcionar con PayPal; no sabía qué hacer hasta que los encontré =)",
+      "author": "Natalya",
+      "date": "2026-03-09"
     },
     {
       "review": "Muchísimas gracias 💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜💜",
@@ -580,23 +660,28 @@
     },
     {
       "review": "todo funcionó",
-      "author": "Pablo Serrano",
+      "author": "Alina S.",
       "date": "2026-03-16"
     },
     {
       "review": "Pagué 3 suscripciones, en el juego ustedes son los mejores",
-      "author": "Lucia Fernandez",
+      "author": "Tatyana",
       "date": "2026-03-18"
     },
     {
       "review": "Muchas gracias",
-      "author": "Mateo Garcia",
+      "author": "Artyom",
       "date": "2026-03-19"
     },
     {
       "review": "Gracias. Tienen un servicio genial, ¡mucho éxito!",
-      "author": "Sofia Martinez",
+      "author": "Dmitriy",
       "date": "2026-03-20"
+    },
+    {
+      "review": "¡Muchas gracias! El mejor servicio al cliente ❤️",
+      "author": "Sophie M.",
+      "date": "2026-03-24"
     },
     {
       "review": "Todo salió bien, muchas gracias por el feedback",
@@ -605,12 +690,12 @@
     },
     {
       "review": "Los mejores, pueden cerrar la solicitud con 10/10",
-      "author": "Diego Lopez",
+      "author": "Viktoriya",
       "date": "2026-03-27"
     },
     {
       "review": "gracias, este es un servicio muy bueno",
-      "author": "Valentina Ruiz",
+      "author": "Nikita",
       "date": "2026-03-30"
     },
     {
@@ -620,22 +705,22 @@
     },
     {
       "review": "¡gracias otra vez por el feedback!",
-      "author": "Carlos Mendoza",
+      "author": "Stanislav",
       "date": "2026-04-04"
     },
     {
-      "review": "Gracias por la respuesta rápida :)",
+      "review": "Gracias por la respuesta rápida",
       "author": "roman.k",
       "date": "2026-04-06"
     },
     {
       "review": "¡Los mejores! Gracias",
-      "author": "Camila Torres",
-      "date": "2025-11-13"
+      "author": "ira_glam",
+      "date": "2026-04-07"
     },
     {
       "review": "Bien, gracias! Me ayudaron mucho😊",
-      "author": "Javier Moreno",
+      "author": "Pavel G.",
       "date": "2026-04-10"
     },
     {
@@ -650,18 +735,18 @@
     },
     {
       "review": "Bien, se lo enviaré un poco más tarde. Gracias por la respuesta rápida ❄️",
-      "author": "Isabella Romero",
+      "author": "Anton",
       "date": "2026-04-17"
     },
     {
       "review": "Entendido) que todo funcione! Su servicio ayuda mucho en tiempos difíciles😉",
-      "author": "Andres Castillo",
+      "author": "Maksim",
       "date": "2026-04-19"
     },
     {
       "review": "Gracias por la respuesta rápida",
-      "author": "roman.k",
-      "date": "2026-04-06"
+      "author": "Kristina",
+      "date": "2026-04-20"
     },
     {
       "review": "gracias por la respuesta rápida",
@@ -670,17 +755,17 @@
     },
     {
       "review": "muchas gracias por las explicaciones, estoy satisfecho",
-      "author": "Mariana Vega",
+      "author": "Roman",
       "date": "2026-04-26"
     },
     {
       "review": "bien, gracias por la consulta",
-      "author": "Nicolas Herrera",
+      "author": "Sergey",
       "date": "2026-04-27"
     },
     {
       "review": "Vale, probaré la de juegos, muchas gracias por el consejo y las respuestas a mis preguntas!",
-      "author": "Paula Navarro",
+      "author": "Denis K.",
       "date": "2026-04-29"
     },
     {
@@ -700,23 +785,28 @@
     },
     {
       "review": "Muchas gracias. Por el profesionalismo y el enfoque individual. Todo salió bien",
-      "author": "Miguel Santos",
+      "author": "Egor",
       "date": "2026-05-08"
     },
     {
       "review": "Muchas gracias por la ayuda! El problema estaba en el país indicado incorrectamente",
-      "author": "Elena Cruz",
+      "author": "Ekaterina",
       "date": "2026-05-10"
     },
     {
       "review": "Gracias, como siempre hacen un gran trabajo🤝🤝🤝",
-      "author": "Alejandro Rojas",
+      "author": "Polina",
       "date": "2026-05-12"
     },
     {
-      "review": "los amo a ustedes y a su servicio",
-      "author": "Claudia Morales",
+      "review": "los quiero",
+      "author": "Aleksey",
       "date": "2026-05-15"
+    },
+    {
+      "review": "y su servicio",
+      "author": "Gleb",
+      "date": "2026-05-17"
     },
     {
       "review": "5 estrellas por el soporte",
@@ -729,9 +819,14 @@
       "date": "2026-05-21"
     },
     {
-      "review": "Listo, perdón, me estoy confundiendo… otra vez muchísimas gracias por la ayuda y el apoyo",
+      "review": "Listo, disculpen, me estoy confundiendo...",
       "author": "@maxim_k",
       "date": "2026-05-23"
+    },
+    {
+      "review": "otra vez muchísimas gracias por la ayuda y el apoyo",
+      "author": "Ilya V.",
+      "date": "2026-05-26"
     },
     {
       "review": "son el soporte técnico más amable y agradable con el que he hablado ❤️‍🩹❤️‍🩹❤️‍🩹",
