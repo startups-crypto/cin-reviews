@@ -394,10 +394,12 @@ Phase 3 implementation note:
 
 - The Inter variable font replaces the four expected static Inter files. Its
   cmap was checked for Ukrainian and Russian sample text.
-- `Alkatra-Medium.ttf` is also self-hosted through `next/font/local` and exposed
-  as `--font-alkatra-medium` for future content that uses the decorative font.
-- The production build emits a self-hosted TTF preload and a generated
-  `@font-face` with `font-display: swap`.
+- `Alkatra-Medium` is also self-hosted through `next/font/local` and exposed as
+  `--font-alkatra-medium` for content that uses the decorative font.
+- The required fonts were later converted from TTF to WOFF2. Current
+  production font sources are `Inter-VariableFont_opsz.woff2` and
+  `Alkatra-Medium.woff2`, with generated `@font-face` rules using
+  `font-display: swap`.
 - By request, the scoped CSS transfer also includes the primary CTA,
   language-dropdown, and hero-background rules plus their required SVG assets.
   These styles are intentionally available before the related components move.
@@ -507,11 +509,14 @@ Phase 8 implementation note:
 - The stale WordPress `manifest.json` was not copied. A web manifest is not
   needed for the reduced landing page at this stage.
 - `app/robots.ts` allows crawling and references the generated sitemap.
-- `app/sitemap.ts` lists `/`, `/ua/`, and `/ru/` with absolute localized
-  alternates for `en`, `uk`, `ru`, and `x-default`.
-- By request, no OG image asset was added yet. Open Graph and Twitter metadata
-  use the temporary `siteConfig.socialImageUrl` URL, which can be replaced
-  directly or via `NEXT_PUBLIC_SOCIAL_IMAGE_URL` when the final asset exists.
+- `app/sitemap.ts` lists all enabled locale URLs with absolute localized
+  alternates and `x-default`.
+- Open Graph and Twitter metadata now use `siteConfig.socialImage`, backed by
+  `public/images/cin-reviews.png` with width `1200`, height `630`, and alt text.
+- `components/seo/StructuredData.tsx` adds basic `WebSite` and `Organization`
+  JSON-LD using confirmed CinCin data and the local header logo. Social profile
+  `sameAs` links were not added because the WordPress social links found during
+  review belonged to an unrelated MaxSwap template.
 - The production build completed successfully. Generated locale HTML was
   checked for GTM and Meta Pixel markers; none were found.
 
@@ -550,6 +555,120 @@ Phase 9 implementation note:
 - Production client chunks contain no markers for the excluded WordPress
   JavaScript features or heavy libraries. The five unused `create-next-app`
   public SVG assets were removed.
+
+## Post-Migration Context: SEO and PageSpeed
+
+This section records follow-up changes made after the nine migration phases so
+future chats can continue from the current state instead of re-auditing from
+scratch.
+
+### Current production target
+
+- Production is deployed on Vercel at `https://cincinreviews.com/`.
+- `NEXT_PUBLIC_SITE_URL` must be set to the production origin in Vercel. Local
+  `.env` values may still point to localhost and should not be used to judge
+  production canonical, sitemap, Open Graph, or JSON-LD URLs.
+- `next.config.ts` keeps `trailingSlash: true` and adds a permanent redirect
+  from `/en/` to `/`.
+- The header CTA is marked with `rel="sponsored"` because it points to
+  `https://aff.cincin.exchange/s/p4GNQ`.
+
+### Current SEO state
+
+- Google Tag Manager and Meta Pixel remain intentionally excluded.
+- Metadata includes localized titles/descriptions, canonical URLs, hreflang
+  alternates, Open Graph, Twitter Card, and a `1200x630` social image.
+- `StructuredData.tsx` emits basic `WebSite` and `Organization` JSON-LD.
+- Do not add Review/AggregateRating schema yet. Current reviews are strings and
+  do not include reliable author/date/rating/source fields.
+- Known content gap: metadata describes a reviews page, while the visible hero
+  title is still product-oriented. If SEO content is expanded later, prefer a
+  visible text H1 and supporting intro copy rather than hidden text.
+
+### Current font and LCP strategy
+
+- `app/fonts.ts` uses self-hosted WOFF2 files:
+  - `app/fonts/Inter-VariableFont_opsz.woff2`
+  - `app/fonts/Alkatra-Medium.woff2`
+- Alkatra uses `preload: false`.
+- `components/deferredAlkatraText/DeferredAlkatraText.tsx` initially renders a
+  plain `<span>` and adds `font-alkatra-medium` on the client after a delay.
+  Current delay is `1400ms`.
+- `components/hero/WhiteLabelHero.tsx` wraps the first H1 segment in
+  `DeferredAlkatraText`.
+- The delayed class is a performance compromise: it keeps Alkatra out of the
+  initial mobile LCP critical path, but users may see the H1 switch from Inter
+  to Alkatra after the delay.
+- A cleaner future optimization is to subset Alkatra after final hero text is
+  confirmed for every locale. If hero text is translated, either create one
+  combined subset for all hero strings or separate Latin/Cyrillic subsets.
+
+### Current hero preload strategy
+
+- `app/[lang]/layout.tsx` imports `ReactDOM` and calls `ReactDOM.preload` in
+  `PreloadResources()`.
+- Current preloaded hero backgrounds:
+  - `/images/template-bgs/hero-left-top-bg-2.svg`
+  - `/images/template-bgs/hero-top-center-bg.svg`
+- Both are preloaded as images with `fetchPriority: "high"` because Lighthouse
+  identified `.hero-decoration-top-left` as the LCP element.
+- Avoid preloading every decorative hero background unless a new report proves
+  it is needed. Too many high-priority preloads can compete with CSS and fonts.
+
+### PageSpeed report history
+
+Reports saved in the project root:
+
+- `cincinreviews.com-20260603T140301.json`
+  - Performance `70`
+  - FCP `3.0s`
+  - LCP `7.2s`
+  - Page weight about `1.316 MB`
+  - Main issues: TTF fonts, duplicate Inter request caused by comma in file
+    name, CSS background LCP discovery.
+- `cincinreviews.com-20260603T150455.json`
+  - Performance `87`
+  - FCP `1.7s`
+  - LCP `4.0s`
+  - Page weight about `716 KB`
+  - WOFF2 conversion and hero background preloads improved the score, but
+    Alkatra still appeared in the critical chain.
+- `cincinreviews.com-20260603T160757.json`
+  - Performance `92`
+  - FCP `0.9s`
+  - LCP `3.2s`
+  - Delaying Alkatra via client class improved LCP, but Alkatra was still often
+    loaded before LCP when the delay was too short.
+- `cincinreviews.com-20260603T162450.json`
+  - Performance `97`
+  - FCP `0.9s`
+  - LCP `1.0s`
+  - TTI `3.5s`
+  - CLS `0.001`
+  - Page weight about `556 KB`
+  - Network dependency tree reduced to `HTML -> CSS`; Alkatra was no longer in
+    the LCP critical chain for that run.
+
+Current remaining PageSpeed warnings are low priority:
+
+- Render-blocking CSS around `3.5 KiB`, estimated saving roughly `140ms`.
+  Removing it would require inline critical CSS or more complex CSS loading.
+- Legacy JavaScript around `14 KiB` from a Next/runtime chunk. This is not a
+  project-level priority.
+- Unused JavaScript entries may include Chrome extension code from the testing
+  browser and should not be treated as site code unless the URL is first-party.
+
+### Notes for future chats
+
+- Do not replace the visible text H1 with a hidden transparent H1 plus a
+  visible image. It is risky for SEO/accessibility. If an image title is ever
+  required, keep it visible inside the H1 with meaningful `alt`, but prefer real
+  visible text.
+- If changing the Alkatra delay, deploy and run PageSpeed multiple times. A
+  delay too close to the measured LCP can put Alkatra back into the critical
+  chain.
+- If implementing font subsets, do it only after final localized hero strings
+  are stable.
 
 ## Suggested Chat Slices
 
