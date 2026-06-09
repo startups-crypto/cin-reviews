@@ -496,11 +496,20 @@ h4,
 }
 
 .cin-reviews li p {
-  margin: 32px 0 0 0;
+  margin: 24px 0 0 0;
   font-size: 16px;
-  font-weight: 700;
   line-height: 24px;
   color: var(--color-heading);
+}
+
+.cin-reviews li footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  column-gap: 20px;
+
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .review-button {
@@ -680,7 +689,7 @@ h4,
   }
   
   .cin-reviews li p {
-    margin-top: 64px;
+    margin-top: 48px;
     font-size: 18px;
     line-height: 28px;
   }

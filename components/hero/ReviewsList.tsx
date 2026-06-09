@@ -28,10 +28,10 @@ export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
   return (
     <>
       <ul aria-live="polite" className="cin-reviews" id="cin-reviews">
-        {reviews.map((review, index) => (
+        {reviews.map(({ author, date, review }, index) => (
           <li
             className={index < visible ? "active" : ""}
-            key={index}
+            key={`${author}-${date}-${index}`}
             style={{
               transitionDelay:
                 revealStart !== null && index >= revealStart
@@ -41,6 +41,10 @@ export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
           >
             <blockquote>
               <p>{review}</p>
+              <footer>
+                <cite>{author}</cite>
+                <time dateTime={date}>{date}</time>
+              </footer>
             </blockquote>
           </li>
         ))}

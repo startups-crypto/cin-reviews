@@ -18,25 +18,101 @@
     "features": []
   },
   "reviews": [
-    "Used the card in Europe with zero problems. Super smooth experience.",
-    "Best experience ever. Simple checkout, instant opening of card, and support was super helpful when I had a question.",
-    "Fast, friendly, and everything just works. Used the card abroad with no problems.",
-    "I paid for my subscription online super easy, good solution and friendly support.",
-    "You guys have the best support ever. Super fast and friendly. I bought the card and used it in Dubai already.",
-    "That was easier than I expected! The card worked right away, and I paid from my phone. Thanks a lot.",
-    "This app make my life better and easier, who want pay by crypto.",
-    "Really great and convenient service. Works quickly and reliably. Our team needed to quickly find a payment solution for our employees on business trips, and CinCin handled it perfectly. Thank you!",
-    "I paid for my subscription online super easy, good solution and friendly support.",
-    "Then i ordered my Coffee and its working. Iam really satisfy by your service and finally happy to have found what i was looking for .",
-    "You are the first one I found.Where the virtual card working very well.",
-    "Legend.",
-    "Cheers for the speedy response and help.",
-    "Thank you very much for everything, if I have any problems I'll let you know.",
-    "Ah, wow 30 days. Got it. Thanks for your answer!",
-    "Thanks a lot for the support, you are the best 👍",
-    "Thanks for the assisitance.",
-    "Appreciate your kindness and support !",
-    "Thank you so much! Best customer service ever ❤️"
+    {
+      "review": "Used the card in Europe with zero problems. Super smooth experience.",
+      "author": "Elena",
+      "date": "2025-06-08"
+    },
+    {
+      "review": "Best experience ever. Simple checkout, instant opening of card, and support was super helpful when I had a question.",
+      "author": "Tomasz K.",
+      "date": "2025-06-09"
+    },
+    {
+      "review": "Fast, friendly, and everything just works. Used the card abroad with no problems.",
+      "author": "George",
+      "date": "2025-06-12"
+    },
+    {
+      "review": "I paid for my subscription online super easy, good solution and friendly support.",
+      "author": "Lukas Weber",
+      "date": "2025-06-14"
+    },
+    {
+      "review": "You guys have the best support ever. Super fast and friendly. I bought the card and used it in Dubai already.",
+      "author": "Sebastian H.",
+      "date": "2025-06-17"
+    },
+    {
+      "review": "That was easier than I expected! The card worked right away, and I paid from my phone. Thanks a lot.",
+      "author": "Anna Kowalski",
+      "date": "2025-06-19"
+    },
+    {
+      "review": "This app make my life better and easier, who want pay by crypto.",
+      "author": "Viktor",
+      "date": "2025-06-22"
+    },
+    {
+      "review": "Really great and convenient service. Works quickly and reliably. Our team needed to quickly find a payment solution for our employees on business trips, and CinCin handled it perfectly. Thank you!",
+      "author": "Ryan",
+      "date": "2025-06-22"
+    },
+    {
+      "review": "I paid for my subscription online super easy, good solution and friendly support.",
+      "author": "Lukas Weber",
+      "date": "2025-06-14"
+    },
+    {
+      "review": "Then i ordered my Coffee and its working. Iam really satisfy by your service and finally happy to have found what i was looking for .",
+      "author": "James P.",
+      "date": "2025-08-21"
+    },
+    {
+      "review": "You are the first one I found.Where the virtual card working very well.",
+      "author": "Ahmed K.",
+      "date": "2025-08-24"
+    },
+    {
+      "review": "Legend.",
+      "author": "Carla",
+      "date": "2025-10-22"
+    },
+    {
+      "review": "Cheers for the speedy response and help.",
+      "author": "Nora",
+      "date": "2025-10-24"
+    },
+    {
+      "review": "Thank you very much for everything, if I have any problems I'll let you know.",
+      "author": "David Nguyen",
+      "date": "2025-10-27"
+    },
+    {
+      "review": "Ah, wow 30 days. Got it. Thanks for your answer!",
+      "author": "Priya",
+      "date": "2025-12-01"
+    },
+    {
+      "review": "Thanks a lot for the support, you are the best 👍",
+      "author": "Amir",
+      "date": "2026-01-01"
+    },
+    {
+      "review": "Thanks for the assisitance.",
+      "author": "Daniel R.",
+      "date": "2026-01-11"
+    },
+    {
+      "review": "Appreciate your kindness and support !",
+      "author": "Chloe",
+      "date": "2026-01-11"
+    },
+    {
+      "review": "Thank you so much! Best customer service ever ❤️",
+      "author": "Sophie M.",
+      "date": "2026-03-24"
+    }
   ],
   "reviewsCTA": "Load more"
 }
