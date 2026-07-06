@@ -40,7 +40,7 @@ export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
             }}
           >
             <blockquote>
-              <p>{review}</p>
+              <p className="text-g-green-l-light">{review}</p>
               <footer>
                 <cite>{author}</cite>
                 <time dateTime={date}>{date}</time>

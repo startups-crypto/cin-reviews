@@ -104,7 +104,7 @@ h3,
 h4,
 .h4-style {
   color: var(--color-heading);
-  font-weight: 700;
+  font-weight: 500;
   transition: color var(--transition-time);
   white-space: pre-line;
 }
@@ -166,11 +166,15 @@ h4,
 }
 
 .text-g-green-l {
-  background: linear-gradient(
-    145deg,
-    rgba(189, 255, 226, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: #6FA378;
+  background: linear-gradient(90deg, rgba(111, 163, 120, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-g-green-l-light {
+  background: #BDFFE2;
+  background: linear-gradient(90deg, rgba(189, 255, 226, 1) 0%, rgba(255, 255, 255, 1) 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -367,6 +371,7 @@ h4,
   left: 0;
   width: 100%;
   height: 120vh;
+  pointer-events: none;
 }
 
 .hero-decoration-top-center {
@@ -431,7 +436,7 @@ h4,
 
 .white-label-page-hero .hero {
   position: relative;
-  z-index: 20;
+  z-index: 2;
   padding: 110px var(--page-padding-mobile) 0;
 }
 
@@ -497,9 +502,9 @@ h4,
 
 .cin-reviews li p {
   margin: 24px 0 0 0;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--color-heading);
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 500;
 }
 
 .cin-reviews li footer {
@@ -510,6 +515,7 @@ h4,
 
   font-size: 16px;
   line-height: 20px;
+  color: #C6D7D1;
 }
 
 .review-button {
@@ -690,12 +696,16 @@ h4,
   
   .cin-reviews li p {
     margin-top: 48px;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 28px;
   }
 
   .review-button {
     margin-top: 64px;
+  }
+
+  .cin-reviews li footer {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 

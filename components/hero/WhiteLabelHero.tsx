@@ -27,7 +27,7 @@ export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLab
         />
       ))}
       <section className="hero">
-        <h1 className="t-center text-g-green">
+        <h1 className="t-center text-g-green-l">
           <DeferredAlkatraText>{heroDictionary.title}</DeferredAlkatraText>
           {heroDictionary.titlePart2}
         </h1>
