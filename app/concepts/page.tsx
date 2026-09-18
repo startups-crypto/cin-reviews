@@ -140,6 +140,7 @@ export default function ConceptsPage() {
           <div className={styles.additional}>
             <h3>Дополнительные HTML</h3>
             <div className={styles.additionalLinks}>
+              <a href="https://v0.app/ave3/chat/sAPTf3PRVq0" target="_blank" rel="noopener noreferrer">NUR ↗</a>
               <a href="/concepts/html/aurum/aurum-ligth.html" target="_blank" rel="noopener noreferrer">Aurum / 1 — aurum-ligth ↗</a>
               <a href="/concepts/html/aurum/aurum/Концепт 08 — Aurum _ Dubai Luxury_files/a_002_NqRm.htm" target="_blank" rel="noopener noreferrer">Aurum / 2 — a_002_NqRm ↗</a>
               <a href="/concepts/html/qwen/qwen-spa.html" target="_blank" rel="noopener noreferrer">Qwen / HTML ↗</a>
