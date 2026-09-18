@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serenity Spa Dubai — Modern Luxury Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFBFA;            /* почти белый, холодновато-нейтральный */
+    --surface:#FFFFFF;
+    --soft:#F5F5F3;          /* светлые панели без тепла */
+    --ink:#1C1C1C;
+    --ink-2:#3A3A3A;
+    --muted:#7C7C7C;
+    --line:#EBEBE8;
+    --gold:#BFA06A;          /* единственный дозированный акцент */
+    --gold-deep:#A8884F;
+    --radius:22px;
+    --shadow:0 24px 60px -28px rgba(20,20,20,.18);
+    --shadow-sm:0 10px 30px -18px rgba(20,20,20,.14);
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);
+    font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+  .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:14px 28px;font-size:14px;letter-spacing:.04em;font-weight:400;transition:.3s;cursor:pointer;border:1px solid transparent}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-deep)}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-deep)}
+  .section{padding:110px 0}
+  .sec-head{max-width:620px;margin-bottom:56px}
+  .sec-head h2{font-size:clamp(34px,4vw,52px);margin-top:14px}
+  .sec-head p{color:var(--muted);margin-top:16px;font-size:16px}
+
+  /* ---- MARBLE as accent ONLY ---- */
+  .marble{
+    background-color:#f3f3f1;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='m'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4' seed='7'/><feColorMatrix values='0 0 0 0 0.62  0 0 0 0 0.62  0 0 0 0 0.60  0 0 0 -1.4 1.1'/></filter><rect width='100%25' height='100%25' filter='url(%23m)'/></svg>");
+    background-size:cover;
+  }
+  .photo{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#e9e7e3,#d7d4cf 55%,#cfcac3);}
+  .photo::after{content:attr(data-label);position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(0,0,0,.18);backdrop-filter:blur(4px);padding:5px 10px;border-radius:999px}
+  .portrait{border-radius:50%;aspect-ratio:1/1;background:radial-gradient(circle at 50% 38%,#efeae4,#dcd6cf 60%,#cdc7bf);position:relative;overflow:hidden}
+  .portrait svg{position:absolute;inset:0;margin:auto;width:46%;height:46%;opacity:.5}
+
+  /* ================= NAVBAR ================= */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,251,250,.82);backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.02em}
+  .logo span{color:var(--gold-deep)}
+  .nav-links{display:flex;gap:34px;font-size:14px;color:var(--ink-2)}
+  .nav-links a{position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:var(--gold);transition:.3s}
+  .nav-links a:hover::after{right:0}
+
+  /* ================= HERO ================= */
+  .hero{padding:90px 0 120px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero h1{font-size:clamp(48px,6.4vw,86px);margin:22px 0 24px}
+  .hero h1 em{font-style:normal;color:var(--gold-deep)}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:430px;margin-bottom:38px}
+  .hero-cta{display:flex;gap:16px;align-items:center}
+  .hero-stats{display:flex;gap:46px;margin-top:54px;padding-top:34px;border-top:1px solid var(--line)}
+  .hero-stats .n{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--ink)}
+  .hero-stats .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .hero-media{position:relative}
+  .hero-media .marble-card{border-radius:30px;height:560px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .hero-media .float-photo{position:absolute;right:-26px;bottom:36px;width:230px;height:300px;border-radius:20px;box-shadow:var(--shadow);border:8px solid var(--surface)}
+  .hero-badge{position:absolute;left:-22px;top:40px;background:var(--surface);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-sm);display:flex;gap:12px;align-items:center}
+  .hero-badge .dot{width:38px;height:38px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--gold-deep)}
+
+  /* ================= SERVICES ================= */
+  .services{background:var(--surface)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .svc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:.35s;position:relative;overflow:hidden}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);border-color:#e3ddd0}
+  .svc .ic{width:54px;height:54px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-deep);margin-bottom:24px}
+  .svc h3{font-size:24px;margin-bottom:12px}
+  .svc p{font-size:14px;color:var(--muted)}
+  .svc .price{margin-top:22px;font-size:13px;letter-spacing:.1em;color:var(--gold-deep);text-transform:uppercase}
+
+  /* ================= WHY ================= */
+  .why-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+  .why-sticky{position:sticky;top:120px}
+  .why-list{display:flex;flex-direction:column}
+  .why-item{display:grid;grid-template-columns:64px 1fr;gap:26px;padding:34px 0;border-bottom:1px solid var(--line)}
+  .why-item:first-child{padding-top:0}
+  .why-num{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold)}
+  .why-item h3{font-size:26px;margin-bottom:8px}
+  .why-item p{color:var(--muted);font-size:15px}
+
+  /* ================= TEAM ================= */
+  .team{background:var(--surface)}
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .member{text-align:center}
+  .member .portrait{width:160px;margin:0 auto 22px;box-shadow:var(--shadow-sm)}
+  .member h3{font-size:23px}
+  .member .role{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-top:6px}
+  .member .bio{font-size:14px;color:var(--muted);margin-top:12px}
+
+  /* ================= TESTIMONIALS ================= */
+  .tst-wrap{max-width:880px;margin:0 auto;text-align:center}
+  .quote-mark{font-family:'Cormorant Garamond',serif;font-size:120px;line-height:.5;color:var(--gold);opacity:.5}
+  .tst-text{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);line-height:1.35;color:var(--ink-2);margin:18px 0 30px}
+  .stars{color:var(--gold);letter-spacing:4px;font-size:18px}
+  .tst-author{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:26px}
+  .tst-author .portrait{width:52px}
+  .tst-author .name{font-weight:400}.tst-author .meta{font-size:13px;color:var(--muted)}
+  .tst-nav{display:flex;gap:12px;justify-content:center;margin-top:38px}
+  .tst-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;color:var(--ink);transition:.3s}
+  .tst-nav button:hover{border-color:var(--gold);color:var(--gold-deep)}
+
+  /* ================= GALLERY (bento) ================= */
+  .gallery{background:var(--surface)}
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:18px}
+  .bento .photo{height:100%}
+  .g-a{grid-column:span 2;grid-row:span 2}
+  .g-b{grid-column:span 2;grid-row:span 1}
+  .g-c{grid-column:span 1;grid-row:span 1}
+  .g-d{grid-column:span 1;grid-row:span 2}
+  .g-e{grid-column:span 2;grid-row:span 1}
+
+  /* ================= FAQ ================= */
+  .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:start}
+  .acc{border-top:1px solid var(--line)}
+  .acc-item{border-bottom:1px solid var(--line)}
+  .acc-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:24px}
+  .acc-q .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);transition:.3s}
+  .acc-item.open .pm{background:var(--gold);color:#fff;border-color:var(--gold);transform:rotate(45deg)}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--muted);font-size:15px}
+  .acc-item.open .acc-a{max-height:200px;padding-bottom:26px}
+
+  /* ================= CONTACT ================= */
+  .contact{background:var(--surface)}
+  .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+  .ct-info{display:flex;flex-direction:column;gap:30px}
+  .ct-block h3{font-size:24px;margin-bottom:8px}
+  .ct-block p{color:var(--muted);font-size:15px}
+  .ct-map{border-radius:var(--radius);height:200px;background:linear-gradient(135deg,#eceae6,#dcd9d3);position:relative;overflow:hidden}
+  .ct-map::before{content:"";position:absolute;inset:0;background:
+     repeating-linear-gradient(0deg,transparent 0 38px,rgba(0,0,0,.03) 38px 39px),
+     repeating-linear-gradient(90deg,transparent 0 38px,rgba(0,0,0,.03) 38px 39px)}
+  .ct-pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 8px rgba(191,160,106,.22)}
+  form.ct-form{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:40px;display:flex;flex-direction:column;gap:18px}
+  .field label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-family:inherit;font-size:15px;color:var(--ink);outline:none;transition:.25s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+  .field textarea{resize:vertical;min-height:110px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  form.ct-form .btn{justify-content:center;margin-top:6px}
+
+  /* ================= FOOTER ================= */
+  .marble-edge{height:6px}
+  footer{background:var(--soft);padding:80px 0 34px}
+  .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  .ft-brand p{color:var(--muted);font-size:14px;margin-top:16px;max-width:280px}
+  .ft-col h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+  .ft-col a{display:block;color:var(--muted);font-size:14px;padding:6px 0;transition:.2s}
+  .ft-col a:hover{color:var(--gold-deep)}
+  .socials{display:flex;gap:12px;margin-top:22px}
+  .socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-2);transition:.3s}
+  .socials a:hover{border-color:var(--gold);color:var(--gold-deep)}
+  .ft-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:60px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+  @media(max-width:980px){
+    .hero-grid,.why-grid,.faq-grid,.ct-grid{grid-template-columns:1fr}
+    .svc-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+    .bento{grid-template-columns:repeat(2,1fr)}
+    .g-a,.g-b,.g-e{grid-column:span 2}.g-d{grid-row:span 1}
+    .ft-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .hero-media .float-photo{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 1. NAVBAR ===== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="logo">Serenity <span>Spa Dubai</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#team">Team</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold">Book Now</a>
+  </div>
+</header>
+
+<!-- ===== 2. HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Private Wellness · Dubai</span>
+      <h1>Elevate Your <em>Senses</em>, Restore Your Calm.</h1>
+      <p class="lead">A sanctuary of refined touch and quiet luxury in the heart of the city. Signature therapies, certified therapists, uncompromising care.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-gold">Explore Treatments</a>
+        <a href="#contact" class="btn btn-ghost">Reserve a Session</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n">12+</div><div class="l">Years of Care</div></div>
+        <div><div class="n">40k</div><div class="l">Guests Served</div></div>
+        <div><div class="n">4.9</div><div class="l">Average Rating</div></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <!-- marble used HERE only, as a material block -->
+      <div class="marble-card marble"></div>
+      <div class="float-photo photo" data-label="Treatment Room"></div>
+      <div class="hero-badge">
+        <div class="dot">✦</div>
+        <div><div style="font-family:'Cormorant Garamond';font-size:18px">Royal Hammam</div><div style="font-size:12px;color:var(--muted)">Signature ritual</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. SERVICES ===== -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Our Menu</span><h2>Treatments crafted for stillness</h2></div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic">◈</div><h3>Hot Stone Massage</h3>
+        <p>Basalt warmth melts tension while restoring circulation and deep muscular release.</p>
+        <div class="price">from 90 min · AED 650</div>
+      </div>
+      <div class="svc">
+        <div class="ic">❀</div><h3>Aromatherapy</h3>
+        <p>Bespoke essential-oil blends guide the nervous system into calm and clarity.</p>
+        <div class="price">from 60 min · AED 480</div>
+      </div>
+      <div class="svc">
+        <div class="ic">⌇</div><h3>Deep Tissue</h3>
+        <p>Precise structural work for chronic tightness, posture and post-training recovery.</p>
+        <div class="price">from 75 min · AED 560</div>
+      </div>
+      <div class="svc">
+        <div class="ic">♛</div><h3>Royal Hammam</h3>
+        <p>An ancestral cleansing ritual with black soap, kessa glove and rhassoul clay.</p>
+        <div class="price">from 120 min · AED 890</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. WHY ===== -->
+<section class="section" id="why">
+  <div class="wrap why-grid">
+    <div class="why-sticky sec-head" style="margin:0">
+      <span class="eyebrow">The Difference</span>
+      <h2>Why guests return to Serenity</h2>
+      <p>We measure luxury not in opulence, but in attention to detail at every step of your visit.</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item"><div class="why-num">01</div><div><h3>Certified Therapists</h3><p>Internationally accredited practitioners with a minimum of eight years of hands-on experience.</p></div></div>
+      <div class="why-item"><div class="why-num">02</div><div><h3>Premium Products</h3><p>Organic oils and clinical-grade skincare, selected for efficacy and sensory elegance.</p></div></div>
+      <div class="why-item"><div class="why-num">03</div><div><h3>Luxury Ambiance</h3><p>Sound-isolated suites, circadian lighting and a curated scent profile throughout.</p></div></div>
+      <div class="why-item"><div class="why-num">04</div><div><h3>Personalized Care</h3><p>Every session begins with a consultation and ends with a tailored home-care plan.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. TEAM ===== -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">The Hands</span><h2>Meet our master therapists</h2></div>
+    <div class="team-grid">
+      <div class="member">
+        <div class="portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#9a948c" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Layla Al-Mansoori</h3><div class="role">Ayurvedic Specialist</div>
+        <p class="bio">Trained in Kerala; leads our traditional wellness protocols.</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#9a948c" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Sofia Ricci</h3><div class="role">Hammam Master</div>
+        <p class="bio">Florence-trained specialist in European bathing rituals.</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#9a948c" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Omar Haddad</h3><div class="role">Sports Recovery</div>
+        <p class="bio">Works with athletes on mobility and deep-tissue rehabilitation.</p>
+      </div>
+      <div class="member">
+        <div class="portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#9a948c" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Amira Khan</h3><div class="role">Aroma Therapist</div>
+        <p class="bio">Formulates bespoke oil blends for each guest's mood and needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. TESTIMONIALS ===== -->
+<section class="section">
+  <div class="wrap tst-wrap">
+    <div class="quote-mark">&ldquo;</div>
+    <p class="tst-text">From the moment you cross the threshold, everything slows down. The Royal Hammam was the most complete reset I've experienced outside of a monastery.</p>
+    <div class="stars">★★★★★</div>
+    <div class="tst-author">
+      <div class="portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#9a948c" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+      <div style="text-align:left"><div class="name">Isabelle Moreau</div><div class="meta">Guest since 2021 · DIFC</div></div>
+    </div>
+    <div class="tst-nav"><button aria-label="prev">←</button><button aria-label="next">→</button></div>
+  </div>
+</section>
+
+<!-- ===== 7. GALLERY / INTERIOR ===== -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Inside</span><h2>A space designed for quiet</h2></div>
+    <div class="bento">
+      <div class="photo g-a" data-label="Reception Lounge"></div>
+      <div class="photo g-b" data-label="Marble Hammam Suite"></div>
+      <div class="photo g-c" data-label="Detail"></div>
+      <div class="photo g-d" data-label="Treatment Room"></div>
+      <div class="photo g-e" data-label="Relaxation Deck"></div>
+      <div class="photo g-c" data-label="Botanicals"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. FAQ ===== -->
+<section class="section">
+  <div class="wrap faq-grid">
+    <div class="sec-head" style="margin:0"><span class="eyebrow">Good to Know</span><h2>Frequently asked questions</h2></div>
+    <div class="acc">
+      <div class="acc-item open">
+        <div class="acc-q">What should I bring to my appointment?<span class="pm">+</span></div>
+        <div class="acc-a">Nothing but yourself. Robes, slippers, towels and amenities are provided. We recommend arriving 15 minutes early to enjoy the relaxation lounge before your treatment.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-q">Can I reschedule or cancel?<span class="pm">+</span></div>
+        <div class="acc-a">Yes — complimentary changes up to 24 hours before your booking. Inside that window a 50% fee applies, as we hold the suite exclusively for you.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-q">Do you offer couples treatments?<span class="pm">+</span></div>
+        <div class="acc-a">Our Private Duo Suite hosts side-by-side sessions with shared hammam access. Couples packages include champagne and a guided breathing ritual.</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-q">Are products suitable for sensitive skin?<span class="pm">+</span></div>
+        <div class="acc-a">Absolutely. Every protocol uses hypoallergenic, patch-tested formulas, and our therapists adjust pressure, temperature and scent during the session.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. CONTACT FORM ===== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Reservations</span><h2>Begin your ritual</h2></div>
+    <div class="ct-grid">
+      <div class="ct-info">
+        <div class="ct-block"><h3>Visit us</h3><p>Boulevard Plaza Tower 1, Downtown Dubai<br>Dubai, United Arab Emirates</p></div>
+        <div class="ct-block"><h3>Hours</h3><p>Daily · 9:00 — 23:00<br>Last booking accepted until 22:00</p></div>
+        <div class="ct-block"><h3>Concierge</h3><p>+971 4 000 0000<br>reservations@serenityspa.ae</p></div>
+        <div class="ct-map"><span class="ct-pin"></span></div>
+      </div>
+      <form class="ct-form" onsubmit="return false">
+        <div class="two">
+          <div class="field"><label>Name</label><input type="text" placeholder="Full name"></div>
+          <div class="field"><label>Phone</label><input type="tel" placeholder="+971"></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        <div class="two">
+          <div class="field"><label>Service</label>
+            <select><option>Royal Hammam</option><option>Hot Stone Massage</option><option>Aromatherapy</option><option>Deep Tissue</option></select></div>
+          <div class="field"><label>Date</label><input type="date"></div>
+        </div>
+        <div class="field"><label>Message</label><textarea placeholder="Preferences, occasion, notes for your therapist…"></textarea></div>
+        <button class="btn btn-gold" type="submit">Request Booking</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. FOOTER (+ thin marble edge as second & final accent) ===== -->
+<div class="marble-edge marble"></div>
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo">Serenity <span>Spa Dubai</span></div>
+        <p>A private wellness destination where modern design meets timeless therapeutic craft.</p>
+        <div class="socials"><a>ig</a><a>fb</a><a>in</a><a>x</a></div>
+      </div>
+      <div class="ft-col"><h4>Explore</h4><a>Services</a><a>Team</a><a>Gallery</a><a>Gift Cards</a></div>
+      <div class="ft-col"><h4>Company</h4><a>About</a><a>Careers</a><a>Press</a><a>Contact</a></div>
+      <div class="ft-col"><h4>Legal</h4><a>Privacy</a><a>Terms</a><a>Cancellation Policy</a></div>
+    </div>
+    <div class="ft-bottom"><span>© 2026 Serenity Spa Dubai. All rights reserved.</span><span>Crafted in Dubai</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.acc-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement, open=item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('open'));
+      if(!open) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

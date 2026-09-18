@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurum — Concept 08 (Light)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Barlow:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAFAF8;--panel:#EFEEEA;--ink:#17181A;--gold:#9C7A3C;--goldl:rgba(156,122,60,.32);--stone:#6B6D70;
+ --d:"Cormorant Garamond",Georgia,serif;--b:"Barlow",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--b);font-weight:300;line-height:1.7}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:1px solid var(--gold);outline-offset:5px}
+h1,h2,h3{font-family:var(--d);font-weight:300;line-height:1.08;letter-spacing:.005em}
+h1{font-size:clamp(50px,8.6vw,124px)}
+h2{font-size:clamp(34px,5vw,66px)}
+section{padding:112px 0}
+.kick{font-size:11px;letter-spacing:.4em;color:var(--gold)}
+.grule{width:100%;height:1px;background:linear-gradient(90deg,var(--gold),rgba(156,122,60,.05));margin:20px 0 32px}
+.lead{font-size:16.5px;color:var(--stone);max-width:56ch}
+.gold{color:var(--gold)}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(250,246,238,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--goldl)}
+.nv{display:flex;align-items:center;height:80px;gap:34px}
+.logo{font-family:var(--d);font-size:27px;letter-spacing:.3em;color:var(--ink)}
+.nlinks{margin-left:auto;display:flex;gap:30px;font-size:12.5px;letter-spacing:.16em;color:var(--stone)}
+.nlinks a:hover{color:var(--gold)}
+.lang{display:flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:.14em}
+.lang button{background:none;border:0;font:inherit;cursor:pointer;color:#9B9284;padding:4px 2px}
+.lang button[aria-pressed="true"]{color:var(--gold);border-bottom:1px solid var(--gold)}
+.cta{border:1px solid var(--gold);color:var(--gold);padding:12px 26px;font-size:11.5px;letter-spacing:.24em}
+.cta:hover{background:var(--gold);color:var(--paper)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center;
+ background:radial-gradient(130% 90% at 76% 24%,rgba(156,122,60,.09),transparent 58%),
+            linear-gradient(180deg,#FAFAF8,#EFEEEA)}
+.lattice{position:absolute;inset:0;opacity:.24;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'><g fill='none' stroke='%239C7A3C' stroke-width='.7' opacity='.6'><path d='M45 4l41 41-41 41L4 45z'/><path d='M45 20l25 25-25 25-25-25z'/><path d='M4 4h82v82H4z'/><path d='M45 4v82M4 45h82'/></g></svg>");
+ mask-image:radial-gradient(70% 70% at 78% 30%,#000,transparent 72%)}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;opacity:.5}
+.hero .wrap{position:relative;z-index:3;width:100%}
+.hero h1{margin:26px 0 24px;max-width:12ch}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hrow{display:flex;gap:40px;align-items:center;margin-top:48px;flex-wrap:wrap}
+.hstat{border-left:1px solid var(--goldl);padding-left:20px;font-size:12.5px;letter-spacing:.1em;color:var(--stone)}
+.hstat b{display:block;font-family:var(--d);font-size:30px;color:var(--ink);letter-spacing:0}
+
+/* services */
+.svc{background:var(--panel)}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--goldl);border:1px solid var(--goldl);margin-top:50px}
+.sc{background:var(--panel);padding:36px 26px 30px;display:flex;flex-direction:column;min-height:250px}
+.sc:hover{background:#E6E5E0}
+.sc .ar{width:40px;height:40px;border:1px solid var(--gold);margin-bottom:20px;position:relative}
+.sc .ar::after{content:"";position:absolute;inset:8px;border:1px solid rgba(156,122,60,.45)}
+.sc h3{font-size:26px;margin-bottom:10px}
+.sc p{font-size:13.5px;color:var(--stone);line-height:1.65}
+.sc .mt{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;color:var(--gold)}
+
+/* why */
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.wg ul{list-style:none;margin-top:10px}
+.wg li{border-bottom:1px solid rgba(30,27,23,.1);padding:24px 0}
+.wg li h3{font-size:25px;margin-bottom:8px}
+.wg li p{font-size:14.5px;color:var(--stone);max-width:46ch}
+.arch{aspect-ratio:3/4;position:relative;overflow:hidden;
+ background:linear-gradient(170deg,#EDECE8,#D9D7D1 70%);border:1px solid var(--goldl)}
+.arch::before{content:"";position:absolute;inset:0;
+ background:radial-gradient(60% 40% at 50% 26%,rgba(156,122,60,.16),transparent 70%)}
+.arch::after{content:"";position:absolute;inset:16px;border:1px solid rgba(156,122,60,.35)}
+.arch b{position:absolute;width:22px;height:22px;pointer-events:none}
+.arch b:nth-child(1){top:14px;left:14px;border-top:1px solid var(--gold);border-left:1px solid var(--gold)}
+.arch b:nth-child(2){top:14px;right:14px;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}
+.arch b:nth-child(3){bottom:14px;left:14px;border-bottom:1px solid var(--gold);border-left:1px solid var(--gold)}
+.arch b:nth-child(4){bottom:14px;right:14px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:50px}
+.tm figure{aspect-ratio:3/4;border-radius:3px;overflow:hidden;position:relative;
+ background:linear-gradient(170deg,#E9E8E4,#EFEEEA);border:1px solid var(--goldl)}
+.tm:nth-child(2) figure{background:linear-gradient(170deg,#E3E4E6,#EEEEEE)}
+.tm:nth-child(3) figure{background:linear-gradient(170deg,#E7E6E2,#E9E7E1)}
+.tm:nth-child(4) figure{background:linear-gradient(170deg,#DEE0DE,#EBEBE7)}
+.tm figure::after{content:"";position:absolute;left:50%;top:22%;transform:translateX(-50%);width:52%;aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(closest-side,rgba(156,122,60,.2),transparent)}
+.tm h3{font-size:23px;margin-top:18px}
+.tm p{font-size:13px;color:var(--stone)}
+.tm small{display:block;margin-top:8px;font-size:10.5px;letter-spacing:.24em;color:var(--gold)}
+
+/* testimonials */
+.tsec{background:var(--panel)}
+.tst{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px}
+.tst blockquote{position:relative;padding-top:34px}
+.tst blockquote::before{content:"";position:absolute;top:0;left:0;width:34px;height:1px;background:var(--gold)}
+.tst q{quotes:none;font-family:var(--d);font-size:23px;line-height:1.45;color:var(--ink)}
+.tst footer{margin-top:24px;font-size:11.5px;letter-spacing:.2em;color:var(--stone)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:16px;margin-top:50px}
+.gal i{display:block;border:1px solid var(--goldl);border-radius:3px}
+.h1x{grid-column:span 2;grid-row:span 2;background:linear-gradient(170deg,#EDECE8,#D2D0CA)}
+.h2x{grid-column:span 4;background:linear-gradient(100deg,#17181A,#9C7A3C 140%)}
+.h3x{grid-column:span 2;background:linear-gradient(200deg,#E7E6E2,#D6D5CF)}
+.h4x{grid-column:span 2;background:radial-gradient(70% 70% at 30% 30%,rgba(156,122,60,.42),#EFEEEA)}
+.h5x{grid-column:span 3;grid-row:span 2;background:linear-gradient(20deg,#EDECE8,#C6C4BC)}
+.h6x{grid-column:span 3;background:linear-gradient(90deg,#17181A,#3A3B3D)}
+
+/* faq */
+details{border-bottom:1px solid rgba(30,27,23,.1);padding:26px 0}
+details:first-of-type{border-top:1px solid rgba(30,27,23,.1)}
+summary{list-style:none;cursor:pointer;font-family:var(--d);font-size:25px;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:12px;height:12px;flex:none;margin-top:12px;border:1px solid var(--gold);transform:rotate(45deg)}
+details[open] summary::after{background:var(--gold)}
+details p{margin-top:14px;font-size:14.5px;color:var(--stone);max-width:70ch}
+
+/* form */
+.bk{background:linear-gradient(180deg,var(--panel),var(--paper))}
+.bg2{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:24px;border:1px solid var(--goldl);padding:38px}
+label{display:flex;flex-direction:column;gap:9px;font-size:10.5px;letter-spacing:.26em;color:var(--stone)}
+input,textarea{font-family:var(--b);font-weight:300;font-size:15px;background:transparent;border:0;border-bottom:1px solid rgba(30,27,23,.18);color:var(--ink);padding:10px 2px}
+input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.full{grid-column:1/-1}
+textarea{min-height:92px;resize:vertical}
+button.sb{grid-column:1/-1;margin-top:8px;background:var(--gold);color:var(--paper);border:0;padding:17px;font:inherit;font-size:11.5px;letter-spacing:.3em;cursor:pointer}
+button.sb:hover{background:var(--ink);color:var(--paper)}
+
+footer.ft{border-top:1px solid var(--goldl);padding:72px 0 30px}
+.fg{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:38px}
+.fg h4{font-size:10.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:18px}
+.fg a,.fg p{display:block;font-size:14px;margin-bottom:10px;color:var(--stone)}
+.fg a:hover{color:var(--ink)}
+.fbot{margin-top:54px;border-top:1px solid rgba(30,27,23,.08);padding-top:24px;font-size:11px;letter-spacing:.18em;color:#8A8375;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:1000px){.sgrid,.team{grid-template-columns:1fr 1fr}.wg,.bg2{grid-template-columns:1fr}
+ .tst{grid-template-columns:1fr 1fr}.gal i{grid-column:span 3 !important}
+ .nlinks{display:none}.fg{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sgrid,.team,.tst,form{grid-template-columns:1fr}.cta{display:none}}
+
+/* menu + form states */
+.burger{display:none;width:42px;height:42px;border:1px solid var(--goldl);background:none;cursor:pointer;
+ align-items:center;justify-content:center;flex-direction:column;gap:5px;margin-left:auto}
+.burger span{width:17px;height:1px;background:var(--gold);transition:transform .2s ease,opacity .2s ease}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.err{font-size:11px;letter-spacing:.1em;color:#B3555A}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#B3555A}
+.sent{border:1px solid var(--gold);padding:64px 40px;text-align:center}
+.sent strong{display:block;font-family:var(--d);font-size:34px;font-weight:300;color:var(--gold);margin-bottom:14px}
+.sent span{font-size:15px;color:var(--stone);display:block;max-width:44ch;margin:0 auto}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* image slots: drop <img> inside any .gal i / .tm figure / .arch */
+.gal i img,.tm figure img,.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
+.gal i{position:relative;overflow:hidden}
+.tm figure img,.arch img{z-index:0}
+.tm figure::after,.arch::after{z-index:2}
+@media(max-width:1000px){
+ .burger{display:flex}
+ .nlinks{display:flex;position:fixed;left:0;right:0;top:80px;flex-direction:column;gap:0;
+  background:var(--panel);padding:6px 28px 26px;transform:translateY(-130%);transition:transform .22s ease;
+  border-bottom:1px solid var(--goldl);z-index:29}
+ .nlinks.open{transform:translateY(0)}
+ .nlinks a{padding:18px 0;border-bottom:1px solid rgba(30,27,23,.08);font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nv">
+  <div class="logo">AURUM</div>
+  <div class="nlinks"><a href="#services">Treatments</a><a href="#why">The house</a><a href="#team">Therapists</a><a href="#gallery">Interiors</a><a href="#faq">FAQ</a></div>
+  <div class="lang"><button aria-pressed="true">EN</button><span style="color:#C9BFAE">|</span><button aria-pressed="false">RU</button></div>
+  <a class="cta" href="#contact">RESERVE</a>
+  <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+
+<header class="hero">
+  <div class="lattice"></div>
+  <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="#D9D8D3">
+      <path d="M0 220V150h60v-30h40v100zM140 220V110h50V70h34v150zM250 220V96l38-14 38 14v124z"/>
+      <path d="M700 220V60l18-52 18 52v160zM360 220v-84h70v84zM470 220v-116h44v-26h30v142z"/>
+      <path d="M800 220V96h56v124zM880 220V128h40v-40h34v132zM980 220V70h60v150z"/>
+      <path d="M1070 220v-96h50v96zM1150 220V86l30-22 30 22v134zM1240 220v-70h60v70zM1330 220V110h110v110z"/>
+      <path d="M560 220V40l16-32 16 32v180z"/>
+    </g>
+    <g stroke="#9C7A3C" stroke-width="1" opacity=".4" fill="none"><path d="M0 219h1440"/></g>
+  </svg>
+  <div class="wrap">
+    <p class="kick">DOWNTOWN DUBAI · BY APPOINTMENT</p>
+    <h1>An hour of<br>gold-standard<br><em>stillness.</em></h1>
+    <p class="lead">A private massage house on the twenty-first floor, overlooking the boulevard. Seven suites, hand-blended oils, and a therapist who stays yours for as long as you keep coming back.</p>
+    <div class="hrow">
+      <a class="cta" style="padding:15px 34px" href="#contact">RESERVE A SUITE</a>
+      <div class="hstat"><b>7</b>private suites</div>
+      <div class="hstat"><b>21F</b>boulevard view</div>
+      <div class="hstat"><b>4.9</b>from 1,240 reviews</div>
+    </div>
+  </div>
+</header>
+
+<section id="services" class="svc"><div class="wrap">
+  <p class="kick">TREATMENTS</p><div class="grule"></div>
+  <h2>Eight signature treatments</h2>
+  <div class="sgrid">
+    <article class="sc"><i class="ar"></i><h3>Deep tissue</h3><p>Slow, weighted work through the back, neck and hips. Our most requested hour.</p><div class="mt"><span>60 / 90 MIN</span><span>AED 420</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Gold ritual</h3><p>Warm oil with argan and amber resin, finished with a scalp and hand ceremony.</p><div class="mt"><span>120 MIN</span><span>AED 890</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Lymphatic drainage</h3><p>Light pressure, long rhythm. Best the morning after a long-haul arrival.</p><div class="mt"><span>90 MIN</span><span>AED 480</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Hot stone</h3><p>Warm basalt laid along the spine so the tissue releases without heavy pressure.</p><div class="mt"><span>90 MIN</span><span>AED 520</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Hammam &amp; scrub</h3><p>Steam, black soap, kessa glove, then closing oil work in the marble suite.</p><div class="mt"><span>120 MIN</span><span>AED 610</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Prenatal</h3><p>Side-lying and bolstered, reviewed with a midwife, from the second trimester.</p><div class="mt"><span>60 MIN</span><span>AED 400</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Four hands</h3><p>Two therapists in mirrored rhythm — the quickest way out of your own head.</p><div class="mt"><span>60 MIN</span><span>AED 790</span></div></article>
+    <article class="sc"><i class="ar"></i><h3>Sports recovery</h3><p>Trigger point and assisted stretch, planned around your training week.</p><div class="mt"><span>75 MIN</span><span>AED 450</span></div></article>
+  </div>
+</div></section>
+
+<section id="why" class="wrap wg">
+  <div>
+    <p class="kick">THE HOUSE</p><div class="grule"></div>
+    <h2>Why Aurum</h2>
+    <ul>
+      <li><h3>Suites, not rooms</h3><p>Each has its own shower, robe and terrace door. You never share a corridor with the next guest.</p></li>
+      <li><h3>Your therapist stays yours</h3><p>The same hands every visit, held in the diary by name rather than by availability.</p></li>
+      <li><h3>Blended, never bottled</h3><p>Oils mixed in the suite from eleven cold-pressed bases and four resins, to your skin and your week.</p></li>
+      <li><h3>Discretion as standard</h3><p>Private lift access from the garage, no reception queue, no names called out loud.</p></li>
+    </ul>
+  </div>
+  <div class="arch" data-slot="why-01"><b></b><b></b><b></b><b></b></div>
+</section>
+
+<section id="team" class="wrap">
+  <p class="kick">THERAPISTS</p><div class="grule"></div>
+  <h2>Nine pairs of hands</h2>
+  <div class="team">
+    <article class="tm"><figure data-slot="team-01"></figure><h3>Layla Haddad</h3><p>Head therapist · deep tissue, post-surgical</p><small>EN · AR · FR</small></article>
+    <article class="tm"><figure data-slot="team-02"></figure><h3>Nadia Ferreira</h3><p>Gold ritual · aroma blending</p><small>EN · PT · ES</small></article>
+    <article class="tm"><figure data-slot="team-03"></figure><h3>Anya Petrova</h3><p>Lymphatic · prenatal protocols</p><small>RU · EN</small></article>
+    <article class="tm"><figure data-slot="team-04"></figure><h3>Yusuf Barakat</h3><p>Hammam · myofascial release</p><small>AR · EN</small></article>
+  </div>
+</section>
+
+<section id="reviews" class="tsec"><div class="wrap">
+  <p class="kick">GUESTS</p><div class="grule"></div>
+  <h2>Written in the guest book</h2>
+  <div class="tst">
+    <blockquote><q>The lift opens straight into the suite. By the time anyone speaks to me I am already sitting down with tea.</q><footer>H. SAEED · DOWNTOWN</footer></blockquote>
+    <blockquote><q>I have used the five best hotel spas in this city. This is quieter, and the hands are better.</q><footer>D. OKONKWO · GUEST SINCE 2022</footer></blockquote>
+    <blockquote><q>The gold ritual is two hours I now book before I book the flight home.</q><footer>M. KOVALENKO · DIFC</footer></blockquote>
+  </div>
+</div></section>
+
+<section id="gallery" class="wrap">
+  <p class="kick">INTERIORS</p><div class="grule"></div>
+  <h2>Marble, brass, boulevard light</h2>
+  <div class="gal"><i class="h1x" data-slot="gallery-01"></i><i class="h2x" data-slot="gallery-02"></i><i class="h3x" data-slot="gallery-03"></i><i class="h4x" data-slot="gallery-04"></i><i class="h5x" data-slot="gallery-05"></i><i class="h6x" data-slot="gallery-06"></i></div>
+</section>
+
+<section id="faq" class="wrap">
+  <p class="kick">QUESTIONS</p><div class="grule"></div>
+  <h2 style="margin-bottom:40px">Before your visit</h2>
+  <details open><summary>How do I arrive discreetly?</summary><p>Park on level B2 and take the private lift to the twenty-first floor. Give your booking name at the panel and the doors open to your suite.</p></details>
+  <details><summary>Can I request a female or male therapist?</summary><p>Yes, and the request is held permanently on your file once you make it.</p></details>
+  <details><summary>Do you accommodate couples?</summary><p>Three suites are set for two guests, with a shared terrace. Mention it in the message field.</p></details>
+  <details><summary>What is your cancellation policy?</summary><p>Free until four hours before. Inside that window we hold half against your next visit rather than charge it.</p></details>
+  <details><summary>Are gift certificates available?</summary><p>Yes, in any value or by treatment, delivered by courier in the emirate or digitally the same day.</p></details>
+</section>
+
+<section id="contact" class="bk"><div class="wrap bg2">
+  <div>
+    <p class="kick">RESERVATION</p><div class="grule"></div>
+    <h2>Reserve your suite</h2>
+    <p class="lead" style="margin-top:18px">Send the form and our concierge replies within the hour with a therapist, a suite and two times. Nothing is charged until you arrive.</p>
+    <p style="margin-top:34px;font-size:15px;line-height:2;color:var(--stone)">Level 21, Boulevard Plaza Tower 2<br>Downtown Dubai<br>+971 4 555 0188<br>concierge@aurum.ae</p>
+  </div>
+  <form>
+    <label>NAME<input type="text" placeholder="Full name"></label>
+    <label>PHONE<input type="tel" placeholder="+971 50 000 0000"></label>
+    <label>EMAIL<input type="email" placeholder="you@email.com"></label>
+    <label>AGE<input type="number" min="16" placeholder="34"></label>
+    <label class="full">DATE<input type="date"></label>
+    <label class="full">BRIEFLY DESCRIBE YOUR CONDITION<textarea placeholder="Tension, injury, pregnancy, sensitivities — anything your therapist should know."></textarea></label>
+    <button class="sb" type="button">SEND RESERVATION REQUEST</button>
+  </form>
+</div></section>
+
+<footer class="ft"><div class="wrap">
+  <div class="fg">
+    <div><div class="logo" style="font-size:30px">AURUM</div><p style="margin-top:20px;max-width:32ch">A private massage house in Downtown Dubai. Dubai Municipality permit 77-2101.</p></div>
+    <div><h4>TREATMENTS</h4><a href="#services">Deep tissue</a><a href="#services">Gold ritual</a><a href="#services">Hammam</a><a href="#services">Prenatal</a></div>
+    <div><h4>HOUSE</h4><a href="#team">Therapists</a><a href="#gallery">Interiors</a><a href="#faq">FAQ</a><a href="#contact">Gift certificates</a></div>
+    <div><h4>HOURS</h4><p>Daily 10:00 – 23:00</p><p>Last reservation 21:30</p><p>Private lift from B2</p></div>
+  </div>
+  <div class="fbot"><span>© 2026 AURUM DUBAI LLC</span><span>PRIVACY · TERMS · CANCELLATION</span></div>
+</div></footer>
+
+<script>
+(function(){
+  var burger=document.querySelector('.burger'),links=document.querySelector('.nlinks');
+  if(burger&&links){
+    burger.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open);
+      burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+    links.addEventListener('click',function(e){
+      if(e.target.closest('a')){links.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    });
+  }
+  var langs=document.querySelectorAll('.lang button');
+  langs.forEach(function(b){b.addEventListener('click',function(){
+    langs.forEach(function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true');
+    document.documentElement.lang=b.textContent.trim().toLowerCase();
+  });});
+  var form=document.querySelector('form');if(!form)return;
+  var btn=form.querySelector('button');
+  function note(el,text){
+    var s=el.parentElement.querySelector('.err');
+    if(!s){s=document.createElement('span');s.className='err';el.parentElement.appendChild(s);}
+    s.textContent=text;el.setAttribute('aria-invalid',text?'true':'false');
+  }
+  form.addEventListener('input',function(e){if(e.target.getAttribute('aria-invalid')==='true')note(e.target,'');});
+  btn.addEventListener('click',function(){
+    var ok=true,first=null;
+    form.querySelectorAll('input,textarea').forEach(function(el){
+      var v=el.value.trim(),e='';
+      if(!v)e='THIS FIELD IS REQUIRED';
+      else if(el.type==='email'&&!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(v))e='ENTER A VALID EMAIL ADDRESS';
+      else if(el.type==='tel'&&v.replace(/\D/g,'').length<8)e='ENTER A VALID PHONE NUMBER';
+      else if(el.type==='number'&&(+v<16||+v>99))e='AGE MUST BE BETWEEN 16 AND 99';
+      note(el,e);
+      if(e){ok=false;if(!first)first=el;}
+    });
+    if(!ok){first.focus();return;}
+    var done=document.createElement('div');done.className='sent';
+    done.innerHTML='<strong>Reservation requested</strong><span>Our concierge replies within the hour with a therapist, a suite and two times.</span>';
+    form.replaceWith(done);done.setAttribute('tabindex','-1');done.focus();
+  });
+})();
+</script>
+</body>
+</html>
