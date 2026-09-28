@@ -892,5 +892,59 @@
       }
     }
   },
-  "reviewsCTA": "Get started"
+  "reviewsCTA": "Get started",
+  "footer": {
+    "mainMenuLabel": "Main menu",
+    "secondaryMenuLabel": "Legal menu",
+    "mainMenu": [
+      {
+        "label": "Card",
+        "url": "https://cincin.exchange/virtual-card/",
+        "children": []
+      },
+      {
+        "label": "White-label",
+        "url": "https://cincin.exchange/white-label/",
+        "children": [
+          {
+            "label": "Crypto Card",
+            "url": "https://cincin.exchange/white-label/#crypto-card"
+          },
+          {
+            "label": "Crypto Iinfrastructure",
+            "url": "https://cincin.exchange/white-label/#crypto-infrastructure"
+          },
+          {
+            "label": "Crypto Telegram Bot",
+            "url": "https://cincin.exchange/white-label/#crypto-telegram-bot"
+          },
+          {
+            "label": "Crypto Exchange",
+            "url": "https://cincin.exchange/white-label/#crypto-exchange"
+          }
+        ]
+      },
+      {
+        "label": "Services",
+        "url": "https://cincin.exchange/services/",
+        "children": []
+      },
+      {
+        "label": "FAQs",
+        "url": "https://cincin.exchange/faq/",
+        "children": []
+      },
+      {
+        "label": "Contacts us",
+        "url": "https://t.me/Cincin_support",
+        "children": []
+      }
+    ],
+    "secondaryMenu": [
+      {
+        "label": "Terms of Use for CinCin Services",
+        "url": "https://cincin.exchange/terms-of-use/"
+      }
+    ]
+  }
 }

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { FaqSection } from "@/components/faq/FaqSection";
-import { FooterLogo } from "@/components/footer/FooterLogo";
+import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
 import { WhiteLabelHero } from "@/components/hero/WhiteLabelHero";
 import { isLocale, locales } from "@/lib/i18n";
@@ -35,7 +35,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         />
         <FaqSection dictionary={dictionary.faq} />
       </main>
-      <FooterLogo />
+      <Footer dictionary={dictionary.footer} />
     </>
   );
 }

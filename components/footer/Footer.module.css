@@ -1,0 +1,254 @@
+.footer {
+  margin-top: 40px;
+}
+
+.bottomLeftDecoration {
+  background: url("/images/footer-bottom-left-decoration-m.svg") no-repeat bottom left;
+  background-size: contain;
+}
+
+.bottomRightDecoration {
+  background: url("/images/footer-bottom-right-decoration-m.svg") no-repeat bottom right;
+  background-size: contain;
+}
+
+.footerSkeletonDecoration {
+  background: url("/images/footer-skeleton-decoration-m.svg") no-repeat top center;
+  background-size: cover;
+}
+
+.footerContainer {
+  padding: 134px var(--page-padding-mobile) 0;
+}
+
+.fullFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+  column-gap: 20px;
+}
+
+.desktopCopy,
+.desktopSocials {
+  display: none;
+}
+
+.mobileFooter {
+  margin-top: 60px;
+}
+
+.copy {
+  margin: 0;
+  color: rgb(255 255 255 / 70%);
+  font-size: 14px;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  column-gap: 16px;
+}
+
+.mobileFooter .socials {
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.socials a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.socials svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hoverCircle {
+  transition: fill var(--transition-time);
+}
+
+.socials a:hover .hoverCircle,
+.socials a:focus-visible .hoverCircle {
+  fill: #223732;
+}
+
+.mainMenu li {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mainMenu li:first-child,
+.secondaryMenu li:first-child {
+  margin-top: 0;
+}
+
+.mainMenu a {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  transition: color var(--transition-time);
+}
+
+.mainMenu a:hover,
+.secondaryMenu a:hover {
+  color: var(--color-link-hover);
+}
+
+.mainMenu a:focus,
+.secondaryMenu a:focus {
+  color: var(--color-link-selected);
+}
+
+.subMenu {
+  display: none;
+}
+
+.secondaryMenu li {
+  margin-top: 20px;
+}
+
+.secondaryMenu a {
+  color: #9d9d9d;
+  font-size: 16px;
+  line-height: 22px;
+  transition: color var(--transition-time);
+}
+
+.footerLogo {
+  padding-right: var(--page-padding-mobile);
+  padding-left: var(--page-padding-mobile);
+  margin-top: 36px;
+}
+
+.footerLogo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 764px) {
+  .footerContainer {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .footer {
+    margin-top: 60px;
+  }
+
+  .bottomLeftDecoration {
+    background-image: url("/images/footer-bottom-left-decoration.svg");
+  }
+
+  .bottomRightDecoration {
+    background-image: url("/images/footer-bottom-right-decoration.svg");
+  }
+
+  .footerSkeletonDecoration {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("/images/footer-skeleton-decoration.svg");
+  }
+
+  .footerContainer {
+    max-width: 900px;
+    padding: 156px 0 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .fullFooter {
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 40px;
+  }
+
+  .desktopCopy,
+  .desktopSocials {
+    display: block;
+  }
+
+  .mobileFooter {
+    display: none;
+    margin-top: 0;
+  }
+
+  .copy {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .mainMenu li,
+  .secondaryMenu li {
+    margin-top: 24px;
+    text-align: left;
+  }
+
+  .footerLogo {
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (min-width: 2100px) {
+  .footer {
+    margin-top: 2.857vw;
+  }
+
+  .footerSkeletonDecoration {
+    width: 78%;
+    max-width: none;
+  }
+
+  .footerContainer {
+    width: 80%;
+    max-width: none;
+    padding-top: 7.429vw;
+  }
+
+  .fullFooter {
+    column-gap: 1.905vw;
+  }
+
+  .copy,
+  .secondaryMenu a {
+    font-size: clamp(16px, 0.762vw, 29px);
+    line-height: 1.375;
+  }
+
+  .mainMenu li,
+  .secondaryMenu li {
+    margin-top: 1.143vw;
+  }
+
+  .mainMenu a {
+    font-size: clamp(20px, 0.952vw, 37px);
+    line-height: 1.3;
+  }
+
+  .socials {
+    column-gap: 0.762vw;
+  }
+
+  .socials a {
+    width: 1.905vw;
+    height: 1.905vw;
+  }
+
+  .footerLogo {
+    margin-top: 1.524vw;
+  }
+}

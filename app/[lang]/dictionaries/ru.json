@@ -892,5 +892,42 @@
       }
     }
   },
-  "reviewsCTA": "Начать"
+  "reviewsCTA": "Начать",
+  "footer": {
+    "mainMenuLabel": "Главное меню",
+    "secondaryMenuLabel": "Юридическое меню",
+    "mainMenu": [
+      {
+        "label": "White-Label",
+        "url": "https://cincin.exchange/ru/white-label/",
+        "children": []
+      },
+      {
+        "label": "Карта",
+        "url": "https://cincin.exchange/ru/virtual-card/",
+        "children": []
+      },
+      {
+        "label": "Сервисы",
+        "url": "https://cincin.exchange/ru/services/",
+        "children": []
+      },
+      {
+        "label": "FAQs",
+        "url": "https://cincin.exchange/ru/faq/",
+        "children": []
+      },
+      {
+        "label": "Связаться с нами",
+        "url": "https://t.me/Cincin_support",
+        "children": []
+      }
+    ],
+    "secondaryMenu": [
+      {
+        "label": "Условия использования CinCin",
+        "url": "https://cincin.exchange/ru/terms-of-use/"
+      }
+    ]
+  }
 }

@@ -888,5 +888,42 @@
       }
     }
   },
-  "reviewsCTA": "Empezar"
+  "reviewsCTA": "Empezar",
+  "footer": {
+    "mainMenuLabel": "Menú principal",
+    "secondaryMenuLabel": "Menú legal",
+    "mainMenu": [
+      {
+        "label": "Tarjeta",
+        "url": "https://cincin.exchange/es/virtual-card/",
+        "children": []
+      },
+      {
+        "label": "Billetera cripto",
+        "url": "https://cincin.exchange/es/white-label/",
+        "children": []
+      },
+      {
+        "label": "Servicios",
+        "url": "https://cincin.exchange/es/services/",
+        "children": []
+      },
+      {
+        "label": "Preguntas frecuentes",
+        "url": "https://cincin.exchange/es/faq/",
+        "children": []
+      },
+      {
+        "label": "Contáctanos",
+        "url": "https://t.me/Cincin_support",
+        "children": []
+      }
+    ],
+    "secondaryMenu": [
+      {
+        "label": "Condiciones de uso para Servicios CinCin",
+        "url": "https://cincin.exchange/es/terms-of-use/"
+      }
+    ]
+  }
 }
