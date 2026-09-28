@@ -19,17 +19,9 @@ const decorations = [
 export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLabelHeroProps) {
   return (
     <div className="hero-wrapper white-label-page-hero">
-      {decorations.map((className) => (
-        <div
-          aria-hidden="true"
-          className={`${className} hero-decoration`}
-          key={className}
-        />
-      ))}
       <section className="hero">
-        <h1 className="t-center text-g-green-l">
-          <DeferredAlkatraText>{heroDictionary.title}</DeferredAlkatraText>
-          {heroDictionary.titlePart2}
+        <h1 className="t-center text-g-green">
+          {heroDictionary.title}<DeferredAlkatraText>{heroDictionary.titlePart2}</DeferredAlkatraText>
         </h1>
         <ReviewsList reviews={reviews} loadMoreText={reviewsCTA} />
       </section>

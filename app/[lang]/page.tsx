@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
+import { FaqSection } from "@/components/faq/FaqSection";
 import { FooterLogo } from "@/components/footer/FooterLogo";
 import { Header } from "@/components/header/Header";
 import { WhiteLabelHero } from "@/components/hero/WhiteLabelHero";
@@ -32,6 +33,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
           reviews={dictionary.reviews}
           reviewsCTA={dictionary.reviewsCTA}
         />
+        <FaqSection dictionary={dictionary.faq} />
       </main>
       <FooterLogo />
     </>

@@ -1,0 +1,299 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px var(--page-padding-mobile) 64px;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion {
+  margin-top: 40px;
+}
+
+.item {
+  padding: 12px 0;
+  border-top: 1px dashed #2b332e;
+}
+
+.item:first-child {
+  border-top: 0;
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-heading);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  list-style: none;
+  text-align: left;
+  transition: color var(--transition-time);
+}
+
+.trigger::-webkit-details-marker {
+  display: none;
+}
+
+.trigger:hover,
+.trigger:focus-visible,
+.item[open] .trigger {
+  color: #d8efe7;
+}
+
+.trigger:focus-visible {
+  outline: 1.5px solid var(--color-white);
+  outline-offset: 4px;
+}
+
+.icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%) rotate(0);
+  transition: transform var(--transition-time);
+}
+
+.openIcon,
+.closeIcon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity var(--transition-time);
+}
+
+.openIcon {
+  z-index: 0;
+  opacity: 1;
+}
+
+.closeIcon {
+  z-index: 0;
+  opacity: 0;
+}
+
+.item[open] .plus {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.item[open] .openIcon {
+  opacity: 0;
+}
+
+.item[open] .closeIcon {
+  opacity: 1;
+}
+
+.answer {
+  margin: 20px 60px 0 0;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 22px;
+  white-space: pre-line;
+}
+
+.findAll {
+  margin-top: 20px;
+}
+
+.transparentButton {
+  position: relative;
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  color: #93d2c2;
+  border: 2px solid rgb(147 210 194 / 30%);
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color var(--transition-time),
+    color var(--transition-time);
+}
+
+.transparentButton:hover,
+.transparentButton:focus-visible {
+  color: var(--color-heading);
+  border-color: #93d2c2;
+}
+
+.haveQuestions {
+  margin-top: 48px;
+}
+
+.haveQuestionsText {
+  max-width: 562px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.haveQuestionsText h3 {
+  margin-bottom: 24px;
+}
+
+.haveQuestionsDescription {
+  margin: 0;
+  color: rgb(198 215 209 / 70%);
+  font-size: 15px;
+  line-height: 21px;
+}
+
+@media only screen and (min-width: 764px) {
+  .section {
+    padding-right: var(--page-padding-small);
+    padding-left: var(--page-padding-small);
+  }
+
+  .findAll {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .section {
+    padding-top: 100px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .accordion {
+    margin-top: 80px;
+  }
+
+  .item {
+    padding: 16px 0;
+  }
+
+  .trigger {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+    margin-left: 24px;
+  }
+
+  .plus {
+    width: 24px;
+    height: 24px;
+  }
+
+  .answer {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .transparentButton {
+    height: 60px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .haveQuestions {
+    margin-top: 80px;
+  }
+
+  .haveQuestionsDescription {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+@media only screen and (min-width: 2100px) {
+  .section {
+    padding-top: 4.762vw;
+  }
+
+  .wrap {
+    width: 42.857%;
+    max-width: none;
+  }
+
+  .accordion {
+    margin-top: 3.81vw;
+  }
+
+  .item {
+    padding: 0.762vw 0;
+  }
+
+  .trigger {
+    font-size: clamp(20px, 0.952vw, 37px);
+    line-height: 1.4;
+  }
+
+  .icon {
+    width: 2.381vw;
+    height: 2.381vw;
+    flex-basis: 2.381vw;
+    margin-left: 1.143vw;
+  }
+
+  .plus {
+    width: 1.143vw;
+    height: 1.143vw;
+  }
+
+  .answer {
+    margin-top: 0.952vw;
+    font-size: clamp(20px, 0.952vw, 37px);
+    line-height: 1.3;
+  }
+
+  .findAll {
+    margin-top: 1.524vw;
+  }
+
+  .transparentButton {
+    height: 2.857vw;
+    padding-right: 1.905vw;
+    padding-left: 1.905vw;
+    border-radius: 1.429vw;
+    font-size: clamp(18px, 0.857vw, 33px);
+    line-height: 1.22;
+  }
+
+  .haveQuestions {
+    margin-top: 3.81vw;
+  }
+
+  .haveQuestionsText {
+    max-width: 26.762vw;
+  }
+
+  .haveQuestionsDescription {
+    font-size: clamp(20px, 0.952vw, 37px);
+    line-height: 1.3;
+  }
+}

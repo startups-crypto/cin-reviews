@@ -1,69 +1,74 @@
-"use client";
-
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import clsx from "clsx";
-import { useState } from "react";
 
 type ReviewsListProps = Readonly<{
   reviews: Dictionary["reviews"];
   loadMoreText: Dictionary["reviewsCTA"];
 }>;
 
-const initialVisibleReviews = 10;
-const step = 10;
-const staggerDelay = 100;
+function formatReviewDate(date: string) {
+  const [year, month, day] = date.split("-");
+
+  return `${day}/${month}/${year.slice(-2)}`;
+}
 
 export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
-  const [visible, setVisible] = useState(initialVisibleReviews);
-  const [revealStart, setRevealStart] = useState<number | null>(null);
-  const allReviewsVisible = visible >= reviews.length;
+  const reviewsInOneColumn = Math.ceil(reviews.length / 3);
+  const reviewColumns = Array.from({ length: 3 }, (_, columnIndex) =>
+    reviews.slice(
+      columnIndex * reviewsInOneColumn,
+      (columnIndex + 1) * reviewsInOneColumn,
+    ),
+  );
+  const reviewToMove = reviewColumns[0].pop();
 
-  function handleLoadMore() {
-    setRevealStart(visible);
-    setVisible((currentVisible) =>
-      Math.min(currentVisible + step, reviews.length),
-    );
+  if (reviewToMove) {
+    reviewColumns[1].unshift(reviewToMove);
   }
 
   return (
-    <>
+    <div className="cin-rewies-wrapper">
       <ul aria-live="polite" className="cin-reviews" id="cin-reviews">
-        {reviews.map(({ author, date, review }, index) => (
-          <li
-            className={index < visible ? "active" : ""}
-            key={`${author}-${date}-${index}`}
-            style={{
-              transitionDelay:
-                revealStart !== null && index >= revealStart
-                  ? `${(index - revealStart) * staggerDelay}ms`
-                  : undefined,
-            }}
-          >
-            <blockquote>
-              <p className="text-g-green-l-light">{review}</p>
-              <footer>
-                <cite>{author}</cite>
-                <time dateTime={date}>{date}</time>
-              </footer>
-            </blockquote>
+        {reviewColumns.map((columnReviews, columnIndex) => (
+          <li key={`review-column-${columnIndex}`}>
+            {columnReviews.map(({ author, date, review }, reviewIndex) => (
+              <div
+                className="review-card"
+                key={`${author}-${date}-${reviewIndex}`}
+              >
+                <div className="review-card-stars svg">
+                    <svg width="112" height="20" viewBox="0 0 112 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.76917 0.554982C9.85457 0.349659 10.1454 0.349659 10.2308 0.554982L12.5864 6.21843C12.6224 6.30499 12.7038 6.36413 12.7972 6.37163L18.9114 6.8618C19.1331 6.87957 19.223 7.15619 19.0541 7.30086L14.3957 11.2912C14.3245 11.3522 14.2934 11.4479 14.3152 11.5391L15.7384 17.5055C15.79 17.7218 15.5547 17.8928 15.3649 17.7769L10.1303 14.5796C10.0503 14.5307 9.94969 14.5307 9.86969 14.5796L4.6351 17.7769C4.44533 17.8928 4.21002 17.7218 4.26161 17.5055L5.68482 11.5391C5.70657 11.4479 5.67547 11.3522 5.60428 11.2912L0.945924 7.30086C0.77704 7.15619 0.866921 6.87957 1.08858 6.8618L7.20276 6.37163C7.2962 6.36413 7.37761 6.30499 7.41361 6.21843L9.76917 0.554982Z" fill="#00A277"/>
+                      <path d="M32.7692 0.554982C32.8546 0.349659 33.1454 0.349659 33.2308 0.554982L35.5864 6.21843C35.6224 6.30499 35.7038 6.36413 35.7972 6.37163L41.9114 6.8618C42.1331 6.87957 42.223 7.15619 42.0541 7.30086L37.3957 11.2912C37.3245 11.3522 37.2934 11.4479 37.3152 11.5391L38.7384 17.5055C38.79 17.7218 38.5547 17.8928 38.3649 17.7769L33.1303 14.5796C33.0503 14.5307 32.9497 14.5307 32.8697 14.5796L27.6351 17.7769C27.4453 17.8928 27.21 17.7218 27.2616 17.5055L28.6848 11.5391C28.7066 11.4479 28.6755 11.3522 28.6043 11.2912L23.9459 7.30086C23.777 7.15619 23.8669 6.87957 24.0886 6.8618L30.2028 6.37163C30.2962 6.36413 30.3776 6.30499 30.4136 6.21843L32.7692 0.554982Z" fill="#00A277"/>
+                      <path d="M55.7692 0.554982C55.8546 0.349659 56.1454 0.349659 56.2308 0.554982L58.5864 6.21843C58.6224 6.30499 58.7038 6.36413 58.7972 6.37163L64.9114 6.8618C65.1331 6.87957 65.223 7.15619 65.0541 7.30086L60.3957 11.2912C60.3245 11.3522 60.2934 11.4479 60.3152 11.5391L61.7384 17.5055C61.79 17.7218 61.5547 17.8928 61.3649 17.7769L56.1303 14.5796C56.0503 14.5307 55.9497 14.5307 55.8697 14.5796L50.6351 17.7769C50.4453 17.8928 50.21 17.7218 50.2616 17.5055L51.6848 11.5391C51.7066 11.4479 51.6755 11.3522 51.6043 11.2912L46.9459 7.30086C46.777 7.15619 46.8669 6.87957 47.0886 6.8618L53.2028 6.37163C53.2962 6.36413 53.3776 6.30499 53.4136 6.21843L55.7692 0.554982Z" fill="#00A277"/>
+                      <path d="M78.7692 0.554982C78.8546 0.349659 79.1454 0.349659 79.2308 0.554982L81.5864 6.21843C81.6224 6.30499 81.7038 6.36413 81.7972 6.37163L87.9114 6.8618C88.1331 6.87957 88.223 7.15619 88.0541 7.30086L83.3957 11.2912C83.3245 11.3522 83.2934 11.4479 83.3152 11.5391L84.7384 17.5055C84.79 17.7218 84.5547 17.8928 84.3649 17.7769L79.1303 14.5796C79.0503 14.5307 78.9497 14.5307 78.8697 14.5796L73.6351 17.7769C73.4453 17.8928 73.21 17.7218 73.2616 17.5055L74.6848 11.5391C74.7066 11.4479 74.6755 11.3522 74.6043 11.2912L69.9459 7.30086C69.777 7.15619 69.8669 6.87957 70.0886 6.8618L76.2028 6.37163C76.2962 6.36413 76.3776 6.30499 76.4136 6.21843L78.7692 0.554982Z" fill="#00A277"/>
+                      <path d="M101.769 0.554982C101.855 0.349659 102.145 0.349659 102.231 0.554982L104.586 6.21843C104.622 6.30499 104.704 6.36413 104.797 6.37163L110.911 6.8618C111.133 6.87957 111.223 7.15619 111.054 7.30086L106.396 11.2912C106.325 11.3522 106.293 11.4479 106.315 11.5391L107.738 17.5055C107.79 17.7218 107.555 17.8928 107.365 17.7769L102.13 14.5796C102.05 14.5307 101.95 14.5307 101.87 14.5796L96.6351 17.7769C96.4453 17.8928 96.21 17.7218 96.2616 17.5055L97.6848 11.5391C97.7066 11.4479 97.6755 11.3522 97.6043 11.2912L92.9459 7.30086C92.777 7.15619 92.8669 6.87957 93.0886 6.8618L99.2028 6.37163C99.2962 6.36413 99.3776 6.30499 99.4136 6.21843L101.769 0.554982Z" fill="#00A277"/>
+                    </svg>
+                </div>
+                <blockquote>
+                  <p>{review}</p>
+                  <footer>
+                    <cite>{author}</cite>
+                    <span className="rewiev-author-delimiter"></span>
+                    <time dateTime={date}>{formatReviewDate(date)}</time>
+                  </footer>
+                </blockquote>
+              </div>
+            ))}
           </li>
         ))}
       </ul>
       <div className="review-button">
         <button
           aria-controls="cin-reviews"
-          aria-expanded={allReviewsVisible}
           className={clsx(
-            "s-button",
-            "s-button--small",
-            allReviewsVisible && "hide",
+            "s-button"
           )}
-          onClick={handleLoadMore}
           type="button"
         >
           {loadMoreText}
         </button>
       </div>
-    </>
+    </div>
   );
 }

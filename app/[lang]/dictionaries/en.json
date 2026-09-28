@@ -11,8 +11,8 @@
     }
   },
   "hero": {
-    "title": "Virtual cards\n",
-    "titlePart2": "you can trust",
+    "title": "Trusted by Users\n",
+    "titlePart2": "Worldwide",
     "description": "",
     "imageAlt": "CinCin white-label wallet cards",
     "features": []
@@ -854,5 +854,43 @@
       "date": "2026-06-05"
     }
   ],
-  "reviewsCTA": "Load more"
+  "faq": {
+    "title": "Got Questions?\nWe’ve Got",
+    "title2": "Answers",
+    "items": [
+      {
+        "question": "How quickly can I make an exchange and receive the desired currency?",
+        "answer": "Most exchanges are completed within seconds, depending on blockchain network conditions. No waiting — just fast, automatic transactions."
+      },
+      {
+        "question": "Which cryptocurrencies are supported?",
+        "answer": "We support a wide range of cryptocurrencies, including:\nADA, ALGO, AVAX, BCH, BNB, BTC, DOT, ETH, HBAR, HT, KRRX, LINK, LTC, MATIC, NEAR, SHIB, SUSHI, TON, TRX, UNI, USDC, USDT, XLM, XRP."
+      },
+      {
+        "question": "Are there any limits?",
+        "answer": "Card limits:\n• Single transaction limit: $50,000\n• Daily limit: $200,000\n• Monthly limit: $2,000,000"
+      },
+      {
+        "question": "How can I make an exchange and receive the desired currency?",
+        "answer": "Simply open our Telegram bot, select the currency you want to exchange, follow the prompts, and confirm the transaction. It’s quick, secure, and beginner-friendly."
+      },
+      {
+        "question": "How do I get a virtual card?",
+        "answer": "Issuing a virtual MasterCard takes less than a minute via our Telegram bot — no documents, no waiting, and no long forms.\nWe’ve prepared a short guide for you on how to open a card:\nCreate a USDT TRC20 address — this will be your balance from which you can open a virtual card.\nOpen the card — the minimum amount to open it is $55:\n• $25 — virtual card issuance fee\n• $25 — immediately credited to your card balance"
+      }
+    ],
+    "findAll": {
+      "label": "Find All Answers",
+      "url": "https://cincin.exchange/faq/"
+    },
+    "haveQuestions": {
+      "title": "Still have questions?",
+      "description": "If you need further help, head over to our detailed FAQ page or get in touch with our support team.",
+      "cta": {
+        "label": "Contact Us",
+        "url": "https://t.me/Cincin_support"
+      }
+    }
+  },
+  "reviewsCTA": "Get started"
 }

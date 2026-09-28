@@ -854,5 +854,39 @@
       "date": "2026-06-05"
     }
   ],
-  "reviewsCTA": "Cargar más"
+  "faq": {
+    "title": "¿Tienes preguntas?\nTenemos",
+    "title2": "respuestas",
+    "items": [
+      {
+        "question": "¿Qué tan rápido puedo realizar un cambio y recibir la moneda deseada?",
+        "answer": "La mayoría de los cambios se completan en segundos, dependiendo de las condiciones de la red blockchain. Sin esperas: solo transacciones rápidas y automáticas."
+      },
+      {
+        "question": "¿Qué criptomonedas son compatibles?",
+        "answer": "Admitimos una amplia gama de criptomonedas, incluyendo:\nADA, ALGO, AVAX, BCH, BNB, BTC, DOT, ETH, HBAR, HT, KRRX, LINK, LTC, MATIC, NEAR, SHIB, SUSHI, TON, TRX, UNI, USDC, USDT, XLM, XRP."
+      },
+      {
+        "question": "¿Hay algún límite?",
+        "answer": "Límites de la tarjeta:\n• Límite por transacción: $50,000\n• Límite diario: $200,000\n• Límite mensual: $2,000,000"
+      },
+      {
+        "question": "¿Cómo puedo realizar un cambio y recibir la moneda deseada?",
+        "answer": "Simplemente abre nuestro bot en Telegram, selecciona la moneda que deseas cambiar, sigue las indicaciones y confirma la transacción. Es rápido, seguro y fácil para principiantes."
+      }
+    ],
+    "findAll": {
+      "label": "Encuentra todas las respuestas",
+      "url": "https://cincin.exchange/es/faq/"
+    },
+    "haveQuestions": {
+      "title": "¿Aún tienes preguntas?",
+      "description": "Si necesitas más ayuda, dirígete a nuestra página detallada de preguntas frecuentes o ponte en contacto con nuestro equipo de soporte.",
+      "cta": {
+        "label": "Contáctanos",
+        "url": "https://t.me/Cincin_support"
+      }
+    }
+  },
+  "reviewsCTA": "Empezar"
 }
