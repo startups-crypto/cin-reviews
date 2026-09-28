@@ -6,6 +6,7 @@ type WhiteLabelHeroProps = Readonly<{
   heroDictionary: Dictionary["hero"];
   reviews: Dictionary["reviews"];
   reviewsCTA: Dictionary["reviewsCTA"];
+  ctaUrl: Dictionary['header']['cta']['url'];
 }>;
 
 const decorations = [
@@ -16,14 +17,18 @@ const decorations = [
   "hero-decoration-bottom-center",
 ] as const;
 
-export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA }: WhiteLabelHeroProps) {
+export function WhiteLabelHero({ heroDictionary, reviews, reviewsCTA,ctaUrl }: WhiteLabelHeroProps) {
   return (
     <div className="hero-wrapper white-label-page-hero">
       <section className="hero">
         <h1 className="t-center text-g-green">
           {heroDictionary.title}<DeferredAlkatraText>{heroDictionary.titlePart2}</DeferredAlkatraText>
         </h1>
-        <ReviewsList reviews={reviews} loadMoreText={reviewsCTA} />
+        <ReviewsList
+          ctaUrl={ctaUrl}
+          reviews={reviews}
+          loadMoreText={reviewsCTA}
+        />
       </section>
     </div>
   );

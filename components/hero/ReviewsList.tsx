@@ -4,6 +4,7 @@ import clsx from "clsx";
 type ReviewsListProps = Readonly<{
   reviews: Dictionary["reviews"];
   loadMoreText: Dictionary["reviewsCTA"];
+  ctaUrl: Dictionary['header']['cta']['url'];
 }>;
 
 function formatReviewDate(date: string) {
@@ -12,7 +13,7 @@ function formatReviewDate(date: string) {
   return `${day}/${month}/${year.slice(-2)}`;
 }
 
-export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
+export function ReviewsList({ reviews, loadMoreText,ctaUrl }: ReviewsListProps) {
   const reviewsInOneColumn = Math.ceil(reviews.length / 3);
   const reviewColumns = Array.from({ length: 3 }, (_, columnIndex) =>
     reviews.slice(
@@ -59,15 +60,7 @@ export function ReviewsList({ reviews, loadMoreText }: ReviewsListProps) {
         ))}
       </ul>
       <div className="review-button">
-        <button
-          aria-controls="cin-reviews"
-          className={clsx(
-            "s-button"
-          )}
-          type="button"
-        >
-          {loadMoreText}
-        </button>
+        <a href={ctaUrl} className={clsx("s-button")}>{loadMoreText}</a>
       </div>
     </div>
   );

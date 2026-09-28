@@ -29,6 +29,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <Header dictionary={dictionary.header} locale={lang} />
       <main className="white-label-page">
         <WhiteLabelHero
+          ctaUrl={dictionary.header.cta.url}
           heroDictionary={dictionary.hero}
           reviews={dictionary.reviews}
           reviewsCTA={dictionary.reviewsCTA}
